@@ -11,7 +11,7 @@ function Nav() {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-gray-600 via-gray-700  to-gray-800 p-2">
+    <nav className=" fixed top-0 left-0 w-full  bg-gradient-to-r from-gray-600 via-gray-700  to-gray-800 p-2 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -28,7 +28,7 @@ function Nav() {
               <div className="ml-10 flex items-baseline space-x-4">
                 <a
                   href="#home"
-                  className={`hover:bg-blue-800 ${
+                  className={`hover:bg-blue-800 hover:text-gray-400 ${
                     activeLink === "home" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                   onClick={() => handleLinkClick("home")}
@@ -38,7 +38,7 @@ function Nav() {
 
                 <a
                   href="#project"
-                  className={`hover:bg-blue-800 ${
+                  className={`hover:bg-blue-800 hover:text-gray-400 ${
                     activeLink === "project" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                   onClick={() => handleLinkClick("project")}
@@ -47,7 +47,7 @@ function Nav() {
                 </a>
                 <a
                   href="#skill"
-                  className={`hover:bg-blue-800 ${
+                  className={`hover:bg-blue-800 hover:text-gray-400 ${
                     activeLink === "skill" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                   onClick={() => handleLinkClick("skill")}
@@ -57,7 +57,7 @@ function Nav() {
 
                 <a
                   href="#contact"
-                  className={`hover:bg-blue-800 ${
+                  className={`hover:bg-blue-800 hover:text-gray-400 ${
                     activeLink === "contact" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                   onClick={() => handleLinkClick("contact")}
@@ -66,7 +66,7 @@ function Nav() {
                 </a>
                 <a
                   href="#resume"
-                  className={`hover:bg-blue-800 ${
+                  className={`hover:bg-blue-800 hover:text-gray-400 ${
                     activeLink === "resume" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                   onClick={() => handleLinkClick("resume")}
@@ -179,10 +179,13 @@ function Nav() {
       >
         {(ref) => (
           <div className="sm:hidden" id="mobile-menu">
-            <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div
+              ref={ref}
+              className=" flex flex-col  px-2 pt-2 pb-3 space-y-1 sm:px-3"
+            >
               <a
                 href="#home"
-                className={`hover:bg-blue-800 ${
+                className={`hover:bg-blue-800 hover:text-gray-400 ${
                   activeLink === "home" ? "text-blue-500" : "text-gray-300"
                 } px-3 py-2 rounded-md text-sm font-medium`}
                 onClick={() => handleLinkClick("home")}
@@ -192,7 +195,7 @@ function Nav() {
 
               <a
                 href="#project"
-                className={`hover:bg-blue-800 ${
+                className={`hover:bg-blue-800 hover:text-gray-400 ${
                   activeLink === "project" ? "text-blue-500" : "text-gray-300"
                 } px-3 py-2 rounded-md text-sm font-medium`}
                 onClick={() => handleLinkClick("project")}
@@ -201,7 +204,7 @@ function Nav() {
               </a>
               <a
                 href="#skill"
-                className={`hover:bg-blue-800 ${
+                className={`hover:bg-blue-800 hover:text-gray-400 ${
                   activeLink === "skill" ? "text-blue-500" : "text-gray-300"
                 } px-3 py-2 rounded-md text-sm font-medium`}
                 onClick={() => handleLinkClick("skill")}
@@ -210,7 +213,7 @@ function Nav() {
               </a>
               <a
                 href="#contact"
-                className={`hover:bg-blue-800 ${
+                className={`hover:bg-blue-800 hover:text-gray-400 ${
                   activeLink === "contact" ? "text-blue-500" : "text-gray-300"
                 } px-3 py-2 rounded-md text-sm font-medium`}
                 onClick={() => handleLinkClick("contact")}
@@ -219,7 +222,7 @@ function Nav() {
               </a>
               <a
                 href="#resume"
-                className={`hover:bg-blue-800
+                className={`hover:bg-blue-800 hover:text-gray-400
                  ${
                    activeLink === "resume" ? "text-blue-500" : "text-gray-300"
                  } px-3 py-2 rounded-md text-sm font-medium`}
