@@ -15,7 +15,7 @@ const Skills = () => {
   };
 
   return (
-    <div className=" bg-gray-900 text-white p-10">
+    <div className=" bg-gray-900 text-white p-10" id="skill">
       <h1 className="text-4xl font-bold text-center mb-8">Skills</h1>
       <div className="flex flex-wrap justify-center gap-6 sm:gap-10 p-10">
         {skillData.map((skills, index) => (

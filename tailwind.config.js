@@ -2,7 +2,11 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: {
+    extend: {
+      boxShadow: ["hover"],
+    },
+  },
   plugins: [],
   purge: {
     // Filenames to scan for classes

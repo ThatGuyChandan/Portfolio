@@ -3,7 +3,10 @@ import Typewriter from "typewriter-effect";
 
 const Home = () => {
   return (
-    <div className="   flex  sm:items-center  sm:min-h-screen bg-gray-900  ">
+    <div
+      className="   flex  sm:items-center  sm:min-h-screen bg-gray-900  "
+      id="home"
+    >
       <div className="flex py-40  justify-center flex-1  text-white   ">
         <div>
           <h1 className="text-1xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-4">

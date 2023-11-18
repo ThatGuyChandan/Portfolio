@@ -3,14 +3,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-* {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
 html,
 body {
   height: 100%;
 }
+
 .skill-icon-container {
   perspective: 1000px;
 }
@@ -42,6 +39,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .animate-bounce {
   animation: bounce 1s infinite;
 

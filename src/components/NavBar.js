@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
+import { Link as ScrollLink } from "react-scroll";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,69 +11,135 @@ function Nav() {
     setIsOpen(false); // Close the mobile menu after clicking a link
   };
 
+  const handleScroll = () => {
+    const scrollThreshold = 100; // Adjust this threshold as needed
+
+    const homeSection = document.getElementById("home");
+    const aboutSection = document.getElementById("about");
+    const skillSection = document.getElementById("skill");
+    const projectSection = document.getElementById("project");
+    const contactSection = document.getElementById("contact");
+
+    const sectionTops = {
+      home: homeSection.offsetTop - scrollThreshold,
+      about: aboutSection.offsetTop - scrollThreshold,
+      skill: skillSection.offsetTop - scrollThreshold,
+      project: projectSection.offsetTop - scrollThreshold,
+      contact: contactSection.offsetTop - scrollThreshold,
+    };
+
+    const currentPosition = window.scrollY;
+
+    if (
+      currentPosition >= sectionTops.home &&
+      currentPosition < sectionTops.about
+    ) {
+      setActiveLink("home");
+    } else if (
+      currentPosition >= sectionTops.about &&
+      currentPosition < sectionTops.skill
+    ) {
+      setActiveLink("about");
+    } else if (
+      currentPosition >= sectionTops.skill &&
+      currentPosition < sectionTops.project
+    ) {
+      setActiveLink("skill");
+    } else if (
+      currentPosition >= sectionTops.project &&
+      currentPosition < sectionTops.contact
+    ) {
+      setActiveLink("project");
+    } else if (currentPosition >= sectionTops.contact) {
+      setActiveLink("contact");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className=" fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-600 via-gray-700  to-gray-800 p-2 ">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-800 p-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <a
-                href="#home"
-                className="text-white"
-                onClick={() => handleLinkClick("home")}
+              <ScrollLink
+                to="home"
+                smooth={true}
+                duration={500}
+                className="text-white cursor-pointer"
+                onClick={() => {
+                  handleLinkClick("home");
+                }}
               >
                 Portfolio
-              </a>
+              </ScrollLink>
             </div>
             <div className="hidden sm:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <a
-                  href="#home"
-                  className={`hover:bg-blue-800 hover:text-gray-400 ${
+                <ScrollLink
+                  to="home"
+                  smooth={true}
+                  duration={500}
+                  className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
                     activeLink === "home" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
-                  onClick={() => handleLinkClick("home")}
+                  onClick={() => {
+                    handleLinkClick("home");
+                  }}
                 >
                   Home
-                </a>
-
-                <a
-                  href="#project"
-                  className={`hover:bg-blue-800 hover:text-gray-400 ${
+                </ScrollLink>
+                <ScrollLink
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
+                    activeLink === "about" ? "text-blue-500" : "text-gray-300"
+                  } px-3 py-2 rounded-md text-sm font-medium`}
+                  onClick={() => handleLinkClick("about")}
+                >
+                  About
+                </ScrollLink>
+                <ScrollLink
+                  to="skill"
+                  smooth={true}
+                  duration={500}
+                  className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
+                    activeLink === "skill" ? "text-blue-500" : "text-gray-300"
+                  } px-3 py-2 rounded-md text-sm font-medium`}
+                  onClick={() => handleLinkClick("skill")}
+                >
+                  Skills
+                </ScrollLink>
+                <ScrollLink
+                  to="project"
+                  smooth={true}
+                  duration={500}
+                  className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
                     activeLink === "project" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                   onClick={() => handleLinkClick("project")}
                 >
                   Projects
-                </a>
-                <a
-                  href="#skill"
-                  className={`hover:bg-blue-800 hover:text-gray-400 ${
-                    activeLink === "skill" ? "text-blue-500" : "text-gray-300"
-                  } px-3 py-2 rounded-md text-sm font-medium`}
-                  onClick={() => handleLinkClick("skill")}
-                >
-                  Skill
-                </a>
-
-                <a
-                  href="#contact"
-                  className={`hover:bg-blue-800 hover:text-gray-400 ${
+                </ScrollLink>
+                <ScrollLink
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
                     activeLink === "contact" ? "text-blue-500" : "text-gray-300"
                   } px-3 py-2 rounded-md text-sm font-medium`}
                   onClick={() => handleLinkClick("contact")}
                 >
                   Contact
-                </a>
-                <a
-                  href="#resume"
-                  className={`hover:bg-blue-800 hover:text-gray-400 ${
-                    activeLink === "resume" ? "text-blue-500" : "text-gray-300"
-                  } px-3 py-2 rounded-md text-sm font-medium`}
-                  onClick={() => handleLinkClick("resume")}
-                >
-                  Resume
-                </a>
+                </ScrollLink>
               </div>
             </div>
           </div>
@@ -80,7 +147,7 @@ function Nav() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-1 focus:ring-offset-1 focus:ring-offset-gray-800 focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -124,7 +191,7 @@ function Nav() {
             <a
               href="https://github.com/ThatGuyChandan"
               target="blank"
-              className="group relative w-9 h-9 md:w-11 md:h-11 bg-opacity-10 inline-flex rounded-full mr-1 md:mr-2 border border-opacity-50 items-center justify-center overflow-hidden hover:scale-110 hover:bg-blue-800 "
+              className="group relative w-8 h-8 md:w-12 md:h-12 bg-opacity-10 inline-flex rounded-full mr-1 md:mr-2 border border-opacity-50 items-center justify-center overflow-hidden hover:scale-110 hover:bg-blue-800 "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +206,7 @@ function Nav() {
             <a
               href="https://www.linkedin.com/in/chandan-thakur-969703250/"
               target="blank"
-              className="group relative w-9 h-9 md:w-11 md:h-11 bg-opacity-10 inline-flex rounded-full mr-1 md:mr-2 border border-opacity-50 items-center justify-center overflow-hidden hover:scale-110 hover:bg-blue-800"
+              className="group relative w-8 h-8 md:w-12 md:h-12 bg-opacity-10 inline-flex rounded-full mr-1 md:mr-2 border border-opacity-50 items-center justify-center overflow-hidden hover:scale-110 hover:bg-blue-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +220,7 @@ function Nav() {
             <a
               href="https://www.instagram.com/_chandan.thakur/"
               target="blank"
-              className="group relative w-9 h-9 md:w-11 md:h-11 bg-opacity-10 inline-flex rounded-full mr-1 md:mr-2 border border-opacity-50 items-center justify-center overflow-hidden hover:scale-110 hover:bg-blue-800"
+              className="group relative w-8 h-8 md:w-12 md:h-12 bg-opacity-10 inline-flex rounded-full mr-1 md:mr-2 border border-opacity-50 items-center justify-center overflow-hidden hover:scale-110 hover:bg-blue-800"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -181,59 +248,89 @@ function Nav() {
           <div className="sm:hidden" id="mobile-menu">
             <div
               ref={ref}
-              className=" flex flex-col  px-2 pt-2 pb-3 space-y-1 sm:px-3"
+              className="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3"
             >
-              <a
-                href="#home"
-                className={`hover:bg-blue-800 hover:text-gray-400 ${
+              <ScrollLink
+                to="home"
+                smooth={true}
+                duration={500}
+                className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
                   activeLink === "home" ? "text-blue-500" : "text-gray-300"
                 } px-3 py-2 rounded-md text-sm font-medium`}
-                onClick={() => handleLinkClick("home")}
+                onClick={() => {
+                  handleLinkClick("home");
+                }}
               >
                 Home
-              </a>
-
-              <a
-                href="#project"
-                className={`hover:bg-blue-800 hover:text-gray-400 ${
+              </ScrollLink>
+              <ScrollLink
+                to="about"
+                smooth={true}
+                duration={500}
+                className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
+                  activeLink === "about" ? "text-blue-500" : "text-gray-300"
+                } px-3 py-2 rounded-md text-sm font-medium`}
+                onClick={() => handleLinkClick("about")}
+              >
+                About
+              </ScrollLink>
+              <ScrollLink
+                to="skill"
+                smooth={true}
+                duration={500}
+                className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
+                  activeLink === "skill" ? "text-blue-500" : "text-gray-300"
+                } px-3 py-2 rounded-md text-sm font-medium`}
+                onClick={() => handleLinkClick("skill")}
+              >
+                Skills
+              </ScrollLink>
+              <ScrollLink
+                to="project"
+                smooth={true}
+                duration={500}
+                className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
                   activeLink === "project" ? "text-blue-500" : "text-gray-300"
                 } px-3 py-2 rounded-md text-sm font-medium`}
                 onClick={() => handleLinkClick("project")}
               >
                 Projects
-              </a>
-              <a
-                href="#skill"
-                className={`hover:bg-blue-800 hover:text-gray-400 ${
-                  activeLink === "skill" ? "text-blue-500" : "text-gray-300"
-                } px-3 py-2 rounded-md text-sm font-medium`}
-                onClick={() => handleLinkClick("skill")}
-              >
-                Skill
-              </a>
-              <a
-                href="#contact"
-                className={`hover:bg-blue-800 hover:text-gray-400 ${
+              </ScrollLink>
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={500}
+                className={`hover:bg-blue-800 cursor-pointer hover:text-white ${
                   activeLink === "contact" ? "text-blue-500" : "text-gray-300"
                 } px-3 py-2 rounded-md text-sm font-medium`}
                 onClick={() => handleLinkClick("contact")}
               >
                 Contact
-              </a>
-              <a
-                href="#resume"
-                className={`hover:bg-blue-800 hover:text-gray-400
-                 ${
-                   activeLink === "resume" ? "text-blue-500" : "text-gray-300"
-                 } px-3 py-2 rounded-md text-sm font-medium`}
-                onClick={() => handleLinkClick("resume")}
-              >
-                Resume
-              </a>
+              </ScrollLink>
             </div>
           </div>
         )}
       </Transition>
+      <div className="fixed bottom-4 right-4 border border-white rounded-full bg-blue-900 m-2 p-1 hover:bg-blue-700">
+        <a href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className={`w-6 h-6 text-white ${
+              activeLink === "home" ? "hidden" : "" // Hide if at home section
+            }`}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </a>
+      </div>
     </nav>
   );
 }
