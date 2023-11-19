@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-const ProjectModal = ({ project, onClose }) => {
-  const languages = project.language.split(", ");
+const ProjectModal = ({ projects, selectedProject, onClose }) => {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(
+    projects.findIndex((project) => project.id === selectedProject.id)
+  );
+
+  const forward = () => {
+    setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
+
+  const backward = () => {
+    setCurrentProjectIndex((prevIndex) =>
+      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
+    );
+  };
+
+  const project = projects[currentProjectIndex];
+  const languages = project.language.split(",");
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black opacity-70 "></div>
-      <div className="bg-white p-12 rounded-lg z-10  m-14  sm:m-24 ">
+      <div className="bg-white p-12 rounded-lg z-10  m-14  sm:m-24 overflow-y-auto max-h-full ">
         <div>
           <button
             onClick={onClose}
@@ -14,10 +29,49 @@ const ProjectModal = ({ project, onClose }) => {
           >
             <span className="text-xl px-2">x</span>
           </button>
+          <button
+            onClick={forward}
+            className="absolute  top-80 right-2 border border-blue-500 bg-blue-500 text-white hover:text-gray-900 hover:bg-white rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="26"
+              height="26"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button
+            onClick={backward}
+            className="absolute  top-80 left-2 border border-blue-500 bg-blue-500 text-white hover:text-gray-900 hover:bg-white rounded-full"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="26"
+              height="26"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
           <div
-            className=" bg-cover bg-center h-60  sm:h-58 md:h-80 border rounded-2xl "
+            className="  h-60 md:h-80 border rounded-2xl "
             style={{
               backgroundImage: `url(${project.imageUrl})`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           ></div>
           <h1 className="bold text-blue-900 text-lg sm:text-xl py-2 sm:my-4 border-b-2 border-blue-500">
@@ -26,12 +80,21 @@ const ProjectModal = ({ project, onClose }) => {
           <h1 className="bold text-blue-900 text-lg sm:text-xl mt-2">
             Details-
           </h1>
-          <p className=" text-xs sm:text-sm  py-4 border-b-2 border-blue-500">
-            {project.details}
-          </p>
+          <scroll>
+            <ul className="list-disc ml-4 sm:ml-6 py-4 ">
+              {project.details.split("\n").map((point, index) => (
+                <li key={index} className="text-xs sm:text-sm">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </scroll>
+
           <div>
-            <p className="text-sm sm:text-lg text-blue-900">Languages:</p>
-            <ul className="list-disc ml-4 sm:ml-6">
+            <p className="text-sm sm:text-lg border-t-2 border-blue-500 text-blue-900">
+              Languages:
+            </p>
+            <ul className="list-disc ml-4 sm:ml-6 flex flex-col flex-wrap h-24">
               {languages.map((language, index) => (
                 <li key={index} className=" text-xs sm:text-sm">
                   {language}

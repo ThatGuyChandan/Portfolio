@@ -73,7 +73,7 @@ function Nav() {
                 to="home"
                 smooth={true}
                 duration={500}
-                className="text-white cursor-pointer"
+                className="text-white cursor-pointer text-lg md:text-xl"
                 onClick={() => {
                   handleLinkClick("home");
                 }}
@@ -81,7 +81,7 @@ function Nav() {
                 Portfolio
               </ScrollLink>
             </div>
-            <div className="hidden sm:block">
+            <div className="hidden sm:block ">
               <div className="ml-10 flex items-baseline space-x-4">
                 <ScrollLink
                   to="home"
