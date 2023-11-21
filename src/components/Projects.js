@@ -4,7 +4,7 @@ import ProjectModal from "./ProjectModal";
 import projectsData from "../data/ProjectData";
 
 const Projects = () => {
-  const [projects, setProjects] = useState(projectsData);
+  const [projects] = useState(projectsData);
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [containerHeight, setContainerHeight] = useState("auto");

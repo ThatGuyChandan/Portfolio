@@ -8,7 +8,7 @@ module.exports = {
     },
   },
   plugins: [],
-  purge: {
+  content: {
     // Filenames to scan for classes
     content: [
       "./src/**/*.html",
