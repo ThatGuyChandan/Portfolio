@@ -19,7 +19,7 @@ Integrated PayPal as a secure payment gateway for online transactions, enhancing
     details: `Implemented user registration and login forms for secure access.
 Enabled users to create, edit, and delete blog posts with MongoDB as the database.
 Utilized Node.js for server-side logic, handling authentication, and managing blog data.`,
-    imageUrl: "./assets/blogweb.png",
+    imageUrl: "./assets/blog.png",
     language: " HTML, CSS, JavaScript,React,Node.js,MongoDB",
     github: "https://github.com/ThatGuyChandan/blog-creating-website",
     liveLink: "",
