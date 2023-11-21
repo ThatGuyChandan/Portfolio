@@ -8,7 +8,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [containerHeight, setContainerHeight] = useState("auto");
-
+  const [loadingMoreProjects, setLoadingMoreProjects] = useState(false);
   const containerRef = useRef(null);
 
   const openModal = (projectId) => {
@@ -21,16 +21,18 @@ const Projects = () => {
   };
 
   const toggleProjectsView = () => {
+    setLoadingMoreProjects(true);
     setShowAllProjects((prevShowAllProjects) => !prevShowAllProjects);
   };
-
   useEffect(() => {
     if (containerRef.current) {
-      setContainerHeight(
-        showAllProjects ? `${containerRef.current.scrollHeight}px` : "auto"
-      );
+      setContainerHeight("auto");
+
+      if (showAllProjects) {
+        setContainerHeight(`${containerRef.current.scrollHeight}px`);
+      }
     }
-  }, [showAllProjects]);
+  }, [showAllProjects, projects]);
 
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 3);
 
@@ -42,13 +44,17 @@ const Projects = () => {
         </h1>
         <div
           ref={containerRef}
-          className="flex flex-wrap justify-center items-stretch -mx-4 overflow-hidden transition-height"
+          className="flex flex-wrap justify-center items-stretch -mx-4 overflow-hidden transition-height mt-4"
           style={{ height: containerHeight }}
         >
-          {visibleProjects.map((project) => (
+          {visibleProjects.map((project, index) => (
             <div
               key={project.id}
-              className="max-w-sm w-full sm:w-1/2 lg:w-1/3 px-4 mb-8"
+              className={`max-w-sm w-full sm:w-1/2 lg:w-1/3 px-4 mb-4 mt-4 ${
+                loadingMoreProjects && !showAllProjects && index >= 3
+                  ? "hidden"
+                  : ""
+              }`}
             >
               <div className="bg-gray-200 shadow-2xl rounded-xl cursor-pointer overflow-hidden transform transition duration-300 hover:scale-105 hover:ring-2 hover:ring-blue-400">
                 <div

@@ -311,15 +311,23 @@ function Nav() {
           </div>
         )}
       </Transition>
-      <div className="fixed bottom-4 right-4 border border-white rounded-full bg-blue-900 m-2 p-1 hover:bg-blue-700">
-        <a href="#">
+      <div className="fixed bottom-4 right-4 border border-white rounded-full bg-blue-900 m-2 p-1 hover:bg-blue-700 ">
+        <ScrollLink
+          to="home"
+          smooth={true}
+          duration={500}
+          className="cursor-pointer"
+          onClick={() => {
+            handleLinkClick("home");
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
             className={`w-6 h-6 text-white ${
-              activeLink === "home" ? "hidden" : "" // Hide if at home section
+              activeLink === "home" ? "hidden" : ""
             }`}
           >
             <path
@@ -329,7 +337,7 @@ function Nav() {
               d="M5 10l7-7m0 0l7 7m-7-7v18"
             />
           </svg>
-        </a>
+        </ScrollLink>
       </div>
     </nav>
   );

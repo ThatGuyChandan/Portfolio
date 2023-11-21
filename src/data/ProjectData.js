@@ -20,15 +20,15 @@ Integrated PayPal as a secure payment gateway for online transactions, enhancing
 Enabled users to create, edit, and delete blog posts with MongoDB as the database.
 Utilized Node.js for server-side logic, handling authentication, and managing blog data.`,
     imageUrl: "./assets/Blog.png",
-    language: " HTML, CSS, JavaScript,React,MongoDB",
+    language: " HTML, CSS, JavaScript,React,Node.js,MongoDB",
     github: "https://github.com/ThatGuyChandan/blog-creating-website",
     liveLink: "",
   },
   {
     id: 3,
-    name: "GlimmerWave",
+    name: "GlimmerWave (in progress)",
     summary:
-      "Designed and developed a feature-rich social media application using HTML, Tailwind CSS, TypeScript, and React, enabling users to register, login, create posts, like, save, and delete posts, and leverage a powerful search functionality.",
+      "Designed and developed a feature-rich social media application using HTML, Tailwind CSS, TypeScript, React and Appwrite, enabling users to register, login, create posts, like, save, and delete posts, and leverage a powerful search functionality.",
     details: `Implemented secure user registration and login functionality to ensure a personalized and secure experience.
     Enabled users to create and share posts seamlessly, fostering content creation and community engagement.
 Implemented a robust system for users to delete their own posts, providing control over shared content.

@@ -38,6 +38,11 @@ const skillData = [
   },
   {
     id: 8,
+    skill: "SQL",
+    icon: "devicon-mysql-plain colored",
+  },
+  {
+    id: 9,
     skill: "MongoDB",
     icon: "devicon-mongodb-plain colored",
   },
