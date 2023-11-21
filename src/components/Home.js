@@ -25,12 +25,12 @@ const Home = () => {
               onInit={(typewriter) => {
                 typewriter
                   .typeString(
-                    "I'm a <span class='text-blue-400'>Web Developer .</span>"
+                    "I'm a <span className='text-blue-400'>Web Developer .</span>"
                   )
                   .pauseFor(1000)
                   .deleteAll()
                   .typeString(
-                    "I'm a <span class='text-blue-400'>Web Developer .</span>"
+                    "I'm a <span className='text-blue-400'>Web Developer .</span>"
                   )
                   .start();
               }}
@@ -61,7 +61,7 @@ const Home = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
+            className="h-4 w-4"
             fill="white"
             viewBox="0 0 24 24"
           >
@@ -75,7 +75,7 @@ const Home = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 "
+            className="h-4 w-4 "
             fill="white"
             viewBox="0 0 24 24"
           >

@@ -46,15 +46,15 @@ const Footer = () => {
           <div>
             <div className="text-white flex gap-2 items-center py-1">
               <svg
-                class="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer"
+                className="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                stroke-width="2"
+                strokeWidth="2"
                 stroke="currentColor"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path stroke="none" d="M0 0h24v24H0z" />
                 <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -64,21 +64,21 @@ const Footer = () => {
             </div>
             <div className="text-white flex gap-2 items-center py-1">
               <svg
-                class="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer"
+                className="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                 />
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
@@ -156,7 +156,7 @@ const Footer = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 hover:gray-700 "
+              className="h-5 w-5 hover:gray-700 "
               fill="white "
               viewBox="0 0 24 24"
             >
@@ -171,7 +171,7 @@ const Footer = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              className="h-5 w-5"
               fill="white"
               viewBox="0 0 24 24"
             >
@@ -185,7 +185,7 @@ const Footer = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 "
+              className="h-5 w-5 "
               fill="white"
               viewBox="0 0 24 24"
             >
