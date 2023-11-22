@@ -80,7 +80,7 @@ const ProjectModal = ({ projects, selectedProject, onClose }) => {
           <h1 className="bold text-blue-900 text-lg sm:text-xl mt-2">
             Details-
           </h1>
-          <scroll>
+          <div style={{ overflowY: "scroll", maxHeight: "300px" }}>
             <ul className="list-disc ml-4 sm:ml-6 py-4 ">
               {project.details.split("\n").map((point, index) => (
                 <li key={index} className="text-xs sm:text-sm">
@@ -88,7 +88,7 @@ const ProjectModal = ({ projects, selectedProject, onClose }) => {
                 </li>
               ))}
             </ul>
-          </scroll>
+          </div>
 
           <div>
             <p className="text-sm sm:text-lg border-t-2 border-blue-500 text-blue-900">

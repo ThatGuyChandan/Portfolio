@@ -48,7 +48,7 @@ const Projects = () => {
           {visibleProjects.map((project) => (
             <div
               key={project.id}
-              className="max-w-sm w-full sm:w-1/2 lg:w-1/3 px-4 mb-3 mt-3"
+              className="max-w-sm w-full sm:w-1/2 lg:w-1/3 px-4 mb-4 mt-3"
             >
               <div className="bg-gray-200 shadow-2xl rounded-xl cursor-pointer overflow-hidden transform transition duration-300 hover:scale-105 hover:ring-2 hover:ring-blue-400">
                 <div

@@ -7,7 +7,7 @@ module.exports = {
       boxShadow: ["hover"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/nesting")],
   content: {
     // Filenames to scan for classes
     content: [

@@ -25,7 +25,7 @@ const Home = () => {
               onInit={(typewriter) => {
                 typewriter
                   .typeString(
-                    "I'm a <span className='text-blue-400'>Web Developer .</span>"
+                    "I'm a <span className='text-blue-400'>Web Developer.</span>"
                   )
                   .pauseFor(1000)
                   .deleteAll()

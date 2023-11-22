@@ -6,7 +6,7 @@ const projectsData = [
       "Implemented a dynamic shopping cart feature, allowing users to add and remove products with real-time updates of the total amount",
     details: `Developed a dynamic shopping cart feature, enabling users to seamlessly add and remove products with real-time updates, resulting in a 25% increase in user engagement and a 20% rise in average order value.
 Integrated PayPal as a secure payment gateway for online transactions, enhancing the website's trustworthiness and contributing to a 30% boost in completed purchases.`,
-    imageUrl: "../../public/assets/phoneStore.png",
+    imageUrl: "./assets/phoneStore.png",
     language: " HTML,CSS,JavaScript,React",
     github: "https://github.com/ThatGuyChandan/phoneStore",
     liveLink: "https://phone-store-using-react.netlify.app/",
@@ -19,7 +19,7 @@ Integrated PayPal as a secure payment gateway for online transactions, enhancing
     details: `Implemented user registration and login forms for secure access.
 Enabled users to create, edit, and delete blog posts with MongoDB as the database.
 Utilized Node.js for server-side logic, handling authentication, and managing blog data.`,
-    imageUrl: "../../public/assets/blog.png",
+    imageUrl: "./assets/blog.png",
     language: " HTML, CSS, JavaScript,React,Node.js,MongoDB",
     github: "https://github.com/ThatGuyChandan/blog-creating-website",
     liveLink: "",
@@ -34,7 +34,7 @@ Utilized Node.js for server-side logic, handling authentication, and managing bl
 Implemented a robust system for users to delete their own posts, providing control over shared content.
 Developed a powerful search feature, enabling users to discover relevant content and users efficiently.
 Implemented a versatile interaction system, allowing users to express appreciation for posts with a "like" feature and bookmark their favorite content through a post-saving functionality, fostering user engagement and facilitating content rediscovery.`,
-    imageUrl: "../../public/assets/socialmedia.png",
+    imageUrl: "./assets/socialmedia.png",
     language: " HTML, Tailwind CSS, TypeScript, React",
     github: "https://github.com/ThatGuyChandan/SocialMediaWeb",
     liveLink: "",
@@ -48,7 +48,7 @@ Implemented a versatile interaction system, allowing users to express appreciati
 Developed robust backend functionality using Node.js to handle task operations efficiently.
 Integrated a feature allowing users to mark tasks as complete, providing a clear visual indication of task progress and completion status.
 Utilized MongoDB to store and manage task data, ensuring data consistency and reliability.`,
-    imageUrl: "../../public/assets/task.png",
+    imageUrl: "./assets/task.png",
     language: " HTML, CSS, JavaScript,Node.js,MongoDB",
     github: "https://github.com/ThatGuyChandan/to-do-app2",
     liveLink: "",
@@ -63,7 +63,7 @@ Utilized MongoDB to store and manage task data, ensuring data consistency and re
 Utilized PHP for server-side scripting to process and store appointment data securely in the SQL database.
 Designed and integrated a contact section for users to easily connect with healthcare providers or administrators.
 Implemented PHP to handle form submissions, ensuring secure communication and efficient data processing and Utilized SQL (via Xampp) for database management, ensuring efficient storage and retrieval of appointment and contact data. `,
-    imageUrl: "../../public/assets/healthCare.png",
+    imageUrl: "./assets/healthCare.png",
     language: " HTML, CSS, JavaScript, PHP, SQL",
     github: "https://github.com/ThatGuyChandan/health-care-website",
     liveLink: "",
@@ -76,9 +76,8 @@ Implemented PHP to handle form submissions, ensuring secure communication and ef
       "Designed and developed a visually appealing and interactive university landing page using HTML, CSS, and JavaScript.",
     details: `Designed a visually appealing and user-friendly layout, emphasizing the university's brand and creating a positive first impression.
     Created a responsive layout to ensure an optimal viewing experience across various devices, including desktops, tablets, and mobile phones.
-    Incorporated JavaScript for interactive elements, enhancing user engagement and providing a dynamic browsing experience.
-    `,
-    imageUrl: "../../public/assets/landing.png",
+    Incorporated JavaScript for interactive elements, enhancing user engagement and providing a dynamic browsing experience.`,
+    imageUrl: "./assets/landing.png",
     language: " HTML, CSS, JavaScript",
     github: "https://github.com/ThatGuyChandan/landing-page",
     liveLink: "https://topuniversity.netlify.app/",
@@ -92,7 +91,7 @@ Implemented PHP to handle form submissions, ensuring secure communication and ef
 Utilized Node.js for server-side logic, ensuring efficient URL shortening operations.
 Enabled users to delete short links, providing control and flexibility over the generated links.
 Integrated a click-tracking mechanism to monitor and display the number of times each short link is clicked.`,
-    imageUrl: "../../public/assets/linkShortener.png",
+    imageUrl: "./assets/linkShortener.png",
     language: " Node.js,JavaScript,MongoDB,EJS,Bootstrap",
     github: "https://github.com/ThatGuyChandan/linkShortener",
     liveLink: "",
@@ -105,7 +104,7 @@ Integrated a click-tracking mechanism to monitor and display the number of times
     details: `Designed a visually appealing website that combines creativity and functionality to leave a lasting impression on visitors.
     Implemented scroll-triggered animations that engage users as they navigate through the site, enhancing the overall user experience.
     `,
-    imageUrl: "../../public/assets/scroll.png",
+    imageUrl: "./assets/scroll.png",
     language: " HTML, CSS, JavaScript",
     github: "https://github.com/ThatGuyChandan/ePixala",
     liveLink: "https://relaxed-stardust-4e0571.netlify.app/",
