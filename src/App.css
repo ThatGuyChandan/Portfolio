@@ -55,3 +55,70 @@ body {
     }
   }
 }
+
+/* certificate  */
+
+.certificates-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.certificates-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.certi-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.certificate-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.certificate-element:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid black;
+}
+
+.certificate-element img {
+  max-width: 100px;
+  height: auto;
+}
+
+.certificate-element a {
+  display: block;
+  margin-top: 10px;
+  color: blue;
+  text-decoration: underline;
+}
+@media screen and (max-width: 680px) {
+  .certi-box {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+@media screen and (max-width: 560px) {
+  .certi-box {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .certificates-container h1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}

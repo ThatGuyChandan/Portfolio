@@ -98,6 +98,17 @@ Integrated a click-tracking mechanism to monitor and display the number of times
   },
   {
     id: 8,
+    name: "Tic Tac Toe",
+    summary:
+      "Tic Tac Toe is a classic implementation of the popular game built using React.js",
+    details: `React Tic Tac Toe is a classic implementation of the popular game built using React.js. It offers an interactive gaming experience with responsive design, state management, and win detection algorithms. Players can enjoy fair turn-based gameplay, with options to restart and responsive UI for various devices.`,
+    imageUrl: "./assets/ticTacToe.png",
+    language: " HTML,CSS,JavaScript,React",
+    github: "https://github.com/ThatGuyChandan/TicTacToe",
+    liveLink: "",
+  },
+  {
+    id: 9,
     name: "ePixala",
     summary:
       "Crafted an aesthetically pleasing website that captivates users through a seamless blend of animations and responsive design. Leveraging HTML, CSS, and JavaScript, the site delivers a delightful scrolling experience, showcasing its full potential on large screens.",
