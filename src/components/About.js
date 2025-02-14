@@ -17,11 +17,18 @@ const About = () => {
       </p>
       <div>
         <a
-          href="https://drive.google.com/file/d/1nzn26iFrDZfFK2Zuh19tucIBQfHDpp1C/view?usp=sharing"
+          href="https://drive.google.com/file/d/1zhgFZk7_cP8COBFRlhWkgv72T1yU68OQ/view?usp=sharing"
           target="blank"
-          className="text-sm sm:text-lg  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 inline-block mt-4"
+          className="text-sm sm:text-lg bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 inline-block mt-4 mr-4"
         >
           Resume
+        </a>
+        <a
+          href="https://medium.com/@chandanthakur.k123"
+          target="blank"
+          className="text-sm sm:text-lg bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 inline-block mt-4"
+        >
+          My Blog
         </a>
       </div>
     </div>
