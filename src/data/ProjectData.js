@@ -1,6 +1,18 @@
 const projectsData = [
   {
     id: 1,
+    name: "Gods Eye",
+    summary:
+      "This project is an AI-powered detection system that utilizes the CLIP model for analyzing visual inputs",
+    details: `This project is an AI-powered detection system that utilizes the CLIP model for analyzing visual inputs (images and videos) to identify critical events such as violence, fire, or car crashes. 
+    The system is designed to handle real-time inputs and provide instant alerts using Telegram notifications for prompt action.`,
+    imageUrl: "./assets/godsEye.png",
+    language: " HTML,CSS,JavaScript,Python,Telegram-bot",
+    github: "https://github.com/ThatGuyChandan/GodsEye",
+    liveLink: "",
+  },
+  {
+    id: 2,
     name: "E-commerce Web",
     summary:
       "Implemented a dynamic shopping cart feature, allowing users to add and remove products with real-time updates of the total amount",
@@ -12,7 +24,7 @@ Integrated PayPal as a secure payment gateway for online transactions, enhancing
     liveLink: "https://phone-store-using-react.netlify.app/",
   },
   {
-    id: 2,
+    id: 3,
     name: "Blog Web",
     summary:
       "Designed and developed a dynamic blog website featuring user authentication and CRUD functionality using MongoDB, Node.js, and React.",
@@ -25,8 +37,8 @@ Utilized Node.js for server-side logic, handling authentication, and managing bl
     liveLink: "",
   },
   {
-    id: 3,
-    name: "GlimmerWave (in progress)",
+    id: 4,
+    name: "GlimmerWave",
     summary:
       "Designed and developed a feature-rich social media application using HTML, Tailwind CSS, TypeScript, React and Appwrite, enabling users to register, login, create posts, like, save, and delete posts, and leverage a powerful search functionality.",
     details: `Implemented secure user registration and login functionality to ensure a personalized and secure experience.
@@ -40,7 +52,7 @@ Implemented a versatile interaction system, allowing users to express appreciati
     liveLink: "",
   },
   {
-    id: 4,
+    id: 5,
     name: "Task Manager",
     summary:
       "Designed and developed a dynamic task management web application using HTML, CSS, JavaScript, Node.js, and MongoDB. The application allows users to seamlessly add, delete, update, and mark tasks as complete.",
@@ -54,7 +66,7 @@ Utilized MongoDB to store and manage task data, ensuring data consistency and re
     liveLink: "",
   },
   {
-    id: 5,
+    id: 6,
     name: "Health Care Web",
     summary:
       "Conceptualized and developed a comprehensive healthcare website utilizing HTML, CSS, JavaScript, PHP, and SQL, with the capability for users to book appointments and seamlessly reach out through the contact section.",
@@ -70,7 +82,7 @@ Implemented PHP to handle form submissions, ensuring secure communication and ef
   },
 
   {
-    id: 6,
+    id: 7,
     name: "University Landing Page",
     summary:
       "Designed and developed a visually appealing and interactive university landing page using HTML, CSS, and JavaScript.",
@@ -83,7 +95,7 @@ Implemented PHP to handle form submissions, ensuring secure communication and ef
     liveLink: "https://topuniversity.netlify.app/",
   },
   {
-    id: 7,
+    id: 8,
     name: "URL Shortener",
     summary:
       "Developed a versatile URL shortener application using Node.js, JavaScript, MongoDB, EJS, and Bootstrap. The application not only shortens URLs but also allows for deletion, while keeping track of the number of times each link is clicked.",
@@ -97,7 +109,7 @@ Integrated a click-tracking mechanism to monitor and display the number of times
     liveLink: "",
   },
   {
-    id: 8,
+    id: 9,
     name: "Tic Tac Toe",
     summary:
       "Tic Tac Toe is a classic implementation of the popular game built using React.js",
@@ -108,7 +120,7 @@ Integrated a click-tracking mechanism to monitor and display the number of times
     liveLink: "",
   },
   {
-    id: 9,
+    id: 10,
     name: "ePixala",
     summary:
       "Crafted an aesthetically pleasing website that captivates users through a seamless blend of animations and responsive design. Leveraging HTML, CSS, and JavaScript, the site delivers a delightful scrolling experience, showcasing its full potential on large screens.",

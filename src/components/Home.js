@@ -1,24 +1,44 @@
 import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import Typewriter from "typewriter-effect";
+import { MeshWobbleMaterial } from "@react-three/drei";
+
+const WavyMesh = () => {
+  return (
+    <mesh scale={[5, 5, 5]} position={[0, 0, -5]}>
+      <planeGeometry args={[10, 10, 50, 50]} />
+      <MeshWobbleMaterial color="#1E293B" speed={1} factor={0.6} />
+    </mesh>
+  );
+};
 
 const Home = () => {
   return (
     <div
-      className="   flex  sm:items-center  sm:min-h-screen bg-gray-900  "
       id="home"
+      className="relative w-full h-screen bg-gray-900 overflow-hidden"
     >
-      <div className="flex py-40  justify-center flex-1  text-white   ">
+      {/* 3D Background */}
+      <Canvas className="absolute top-0 left-0 w-full h-full z-0">
+        <ambientLight intensity={0.5} />
+        <WavyMesh />
+        <OrbitControls enableZoom={false} enablePan={false} />
+      </Canvas>
+
+      {/* Foreground Content */}
+      <div className="absolute inset-0 flex items-center justify-center z-10 text-white">
         <div>
-          <h1 className="text-1xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold mb-4">
             Hello,
           </h1>
-          <h1 className="text-1xl sm:text-2xl md:text-4xl lg:text-6xl font-bold mb-4">
-            I'm Chandan Thakur .
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold mb-4">
+            I'm Chandan Thakur.
           </h1>
-          <div className="text-1xl  sm:text-2xl md:text-4xl lg:text-6xl ">
+          <div className="text-xl md:text-3xl lg:text-5xl font-semibold text-blue-400">
             <Typewriter
               options={{
-                delay: 300,
+                delay: 100,
                 typeSpeed: 20,
                 loop: true,
               }}
@@ -30,7 +50,7 @@ const Home = () => {
                   .pauseFor(1000)
                   .deleteAll()
                   .typeString(
-                    "I'm a <span className='text-blue-400'>Web Developer .</span>"
+                    "I'm a <span className='text-blue-400'>Web Developer.</span>"
                   )
                   .start();
               }}
@@ -38,7 +58,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className=" flex flex-col py-40  sm:hidden  ">
+
+      {/* Social Links */}
+      <div className="relative z-10 flex flex-col py-40 sm:hidden">
         <a
           href="https://github.com/ThatGuyChandan"
           target="blank"
