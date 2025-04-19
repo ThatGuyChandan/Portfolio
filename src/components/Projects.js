@@ -1,14 +1,17 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import ProjectModal from "./ProjectModal";
+import { useTheme } from '../context/ThemeContext';
 import projectsData from "../data/ProjectData";
+
+// Lazy load the ProjectModal component
+const ProjectModal = lazy(() => import('./ProjectModal'));
 
 const Projects = () => {
   const [projects] = useState(projectsData);
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [containerHeight, setContainerHeight] = useState("auto");
-
+  const { theme } = useTheme();
   const containerRef = useRef(null);
 
   const openModal = (projectId) => {
@@ -35,9 +38,18 @@ const Projects = () => {
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 3);
 
   return (
-    <div className="antialiased bg-gray-100 font-serif font-light" id="project">
+    <div
+      className={`antialiased ${
+        theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'
+      } font-serif font-light`}
+      id="project"
+    >
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center p-6 text-gray-900">
+        <h1
+          className={`text-4xl font-bold text-center p-6 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}
+        >
           Projects
         </h1>
         <div
@@ -50,9 +62,13 @@ const Projects = () => {
               key={project.id}
               className="max-w-sm w-full sm:w-1/2 lg:w-1/3 px-4 mb-4 mt-3"
             >
-              <div className="bg-gray-200 shadow-2xl rounded-xl cursor-pointer overflow-hidden transform transition duration-300 hover:scale-105 hover:ring-2 hover:ring-blue-400">
+              <div
+                className={`${
+                  theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+                } shadow-2xl rounded-xl cursor-pointer overflow-hidden transform transition duration-300 hover:scale-105 hover:ring-2 hover:ring-blue-400`}
+              >
                 <div
-                  className="relative h-48 sm:h-56 overflow-hidden "
+                  className="relative h-48 sm:h-56 overflow-hidden"
                   style={{
                     backgroundImage: `url(${project.imageUrl})`,
                     backgroundSize: "contain",
@@ -63,10 +79,20 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"></div>
                 </div>
                 <div className="p-4">
-                  <p className="text-xl text-blue-900 font-bold mb-2">
+                  <p
+                    className={`text-xl ${
+                      theme === 'dark' ? 'text-blue-400' : 'text-blue-900'
+                    } font-bold mb-2`}
+                  >
                     {project.name}
                   </p>
-                  <p className="text-sm text-gray-900">{project.summary}</p>
+                  <p
+                    className={`text-sm ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
+                    }`}
+                  >
+                    {project.summary}
+                  </p>
                 </div>
                 <div className="flex justify-end p-4">
                   <button
@@ -114,11 +140,13 @@ const Projects = () => {
         </div>
       </div>
       {selectedProject && (
-        <ProjectModal
-          projects={projects}
-          selectedProject={selectedProject}
-          onClose={closeModal}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ProjectModal
+            projects={projects}
+            selectedProject={selectedProject}
+            onClose={closeModal}
+          />
+        </Suspense>
       )}
     </div>
   );

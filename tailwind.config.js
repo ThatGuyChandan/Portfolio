@@ -1,27 +1,20 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./public/index.html"
+  ],
+  darkMode: 'class',
   theme: {
-    extend: {},
-  },
-  variants: {
     extend: {
-      boxShadow: ["hover"],
+      colors: {
+        primary: '#3B82F6',
+        secondary: '#1E40AF',
+      },
+      boxShadow: {
+        'custom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      },
     },
   },
-  plugins: [require("@tailwindcss/nesting")],
-  content: {
-    // Filenames to scan for classes
-    content: [
-      "./src/**/*.html",
-      "./src/**/*.js",
-      "./src/**/*.jsx",
-      "./src/**/*.ts",
-      "./src/**/*.tsx",
-      "./public/index.html",
-    ],
-    // Options passed to PurgeCSS
-    options: {
-      // Whitelist specific selectors by name
-      // whitelist: [],
-    },
-  },
+  plugins: [],
 };
