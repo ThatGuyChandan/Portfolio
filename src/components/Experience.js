@@ -1,7 +1,6 @@
 import React from "react";
 import { useTheme } from '../context/ThemeContext';
 import { FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import { FiExternalLink } from 'react-icons/fi';
 import { FaLinkedin } from 'react-icons/fa';
 
 const Experience = () => {

@@ -15,19 +15,34 @@ function Nav() {
     setIsOpen(false);
   };
 
-  const handleScroll = () => {
-    const isScrolled = window.scrollY > 0;
-    if (isScrolled !== scrolled) {
-      setScrolled(isScrolled);
-    }
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 0;
+      setScrolled(isScrolled);
+  
+      const sections = ['home', 'about', 'skill', 'project', 'experience'];
+      const scrollPosition = window.scrollY + 100;
+  
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+  
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveLink(section);
+            break;
+          }
+        }
+      }
+    };
+  
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
+  
 
   return (
     <nav
@@ -60,7 +75,7 @@ function Nav() {
                 to="home"
                 smooth={true}
                 duration={500}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -73,7 +88,7 @@ function Nav() {
                 to="about"
                 smooth={true}
                 duration={500}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -86,7 +101,7 @@ function Nav() {
                 to="skill"
                 smooth={true}
                 duration={500}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -95,24 +110,12 @@ function Nav() {
               >
                 Skills
               </ScrollLink>
-              <ScrollLink
-                to="project"
-                smooth={true}
-                duration={500}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                  theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "project" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
-                onClick={() => handleLinkClick("project")}
-              >
-                Projects
-              </ScrollLink>
+             
               <ScrollLink
                 to="experience"
                 smooth={true}
                 duration={500}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -120,6 +123,19 @@ function Nav() {
                 onClick={() => handleLinkClick("experience")}
               >
                 Experience
+              </ScrollLink>
+              <ScrollLink
+                to="project"
+                smooth={true}
+                duration={500}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
+                  theme === 'dark'
+                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                } ${activeLink === "project" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                onClick={() => handleLinkClick("project")}
+              >
+                Projects
               </ScrollLink>
               <div className="flex items-center space-x-2">
                 <a
@@ -273,7 +289,7 @@ function Nav() {
                 to="home"
                 smooth={true}
                 duration={500}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -286,7 +302,7 @@ function Nav() {
                 to="about"
                 smooth={true}
                 duration={500}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -299,7 +315,7 @@ function Nav() {
                 to="skill"
                 smooth={true}
                 duration={500}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -312,7 +328,7 @@ function Nav() {
                 to="project"
                 smooth={true}
                 duration={500}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
@@ -325,7 +341,7 @@ function Nav() {
                 to="experience"
                 smooth={true}
                 duration={500}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
