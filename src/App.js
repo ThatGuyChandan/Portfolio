@@ -28,15 +28,29 @@ function App() {
 
   return (
     <ThemeProvider value={{ theme, toggleTheme }}>
-      <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'}`}>
+      <div className={`min-h-screen snap-y snap-proximity ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
         <NavBar />
-        <Home />
-        <About />
-        <Skills />
-        <Certifiacte />
-        <Experience />
-        <Projects />
-        <Footer />
+        <section className="h-screen snap-start" id="home">
+          <Home />
+        </section>
+        <section className="h-screen snap-start" id="about">
+          <About />
+        </section>
+        <section className="min-h-screen snap-start" id="skills">
+          <Skills />
+        </section>
+        <section className="h-screen snap-start" id="certificates">
+          <Certifiacte />
+        </section>
+        <section className="h-screen snap-start" id="experience">
+          <Experience />
+        </section>
+        <section className="min-h-screen snap-start" id="projects">
+          <Projects />
+        </section>
+        <section className="min-h-screen snap-start" id="footer">
+          <Footer />
+        </section>
       </div>
     </ThemeProvider>
   );

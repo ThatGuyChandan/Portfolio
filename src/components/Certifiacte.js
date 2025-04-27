@@ -19,7 +19,7 @@ const Certificate = () => {
   }, []);
 
   return (
-    <section 
+    <section
       className={`w-full py-20 ${
         theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'
       }`}

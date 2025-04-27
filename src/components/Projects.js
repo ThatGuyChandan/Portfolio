@@ -11,6 +11,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [containerHeight, setContainerHeight] = useState("auto");
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const { theme } = useTheme();
   const containerRef = useRef(null);
 
@@ -24,7 +25,9 @@ const Projects = () => {
   };
 
   const toggleProjectsView = () => {
+    setIsTransitioning(true);
     setShowAllProjects((prevShowAllProjects) => !prevShowAllProjects);
+    setTimeout(() => setIsTransitioning(false), 500); // Match this with transition duration
   };
 
   useEffect(() => {
@@ -40,45 +43,57 @@ const Projects = () => {
   return (
     <div
       className={`antialiased ${
-        theme === 'dark' ? 'bg-gray-900' : 'bg-gray-100'
-      } font-serif font-light`}
+        theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'
+      } font-serif font-light py-16`}
       id="project"
     >
-      <div className="max-w-6xl mx-auto">
-        <h1
-          className={`text-4xl font-bold text-center p-6 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}
-        >
-          Projects
-        </h1>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1
+            className={`text-4xl md:text-5xl font-bold mb-4 ${
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            }`}
+          >
+            Projects
+          </h1>
+          <div className={`w-24 h-1 mx-auto ${
+            theme === 'dark' ? 'bg-blue-500' : 'bg-blue-600'
+          }`}></div>
+        </div>
         <div
           ref={containerRef}
-          className="flex flex-wrap justify-center items-stretch -mx-4 overflow-hidden transition-height mt-4"
+          className="flex flex-wrap justify-center items-stretch -mx-4 overflow-hidden transition-all duration-500 ease-in-out"
           style={{ height: containerHeight }}
         >
           {visibleProjects.map((project) => (
             <div
               key={project.id}
-              className="max-w-sm w-full sm:w-1/2 lg:w-1/3 px-4 mb-4 mt-3"
+              className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8 transform transition duration-500 hover:scale-105"
             >
               <div
                 className={`${
                   theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-                } shadow-2xl rounded-xl cursor-pointer overflow-hidden transform transition duration-300 hover:scale-105 hover:ring-2 hover:ring-blue-400`}
+                } shadow-2xl rounded-xl cursor-pointer overflow-hidden h-full flex flex-col`}
               >
                 <div
-                  className="relative h-48 sm:h-56 overflow-hidden"
+                  className="relative h-48 sm:h-56 overflow-hidden group"
                   style={{
                     backgroundImage: `url(${project.imageUrl})`,
-                    backgroundSize: "contain",
+                    backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                   }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className={`text-sm ${
+                      theme === 'dark' ? 'text-gray-200' : 'text-white'
+                    }`}>
+                      {project.summary}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4">
+                <div className="p-6 flex-grow">
                   <p
                     className={`text-xl ${
                       theme === 'dark' ? 'text-blue-400' : 'text-blue-900'
@@ -86,18 +101,15 @@ const Projects = () => {
                   >
                     {project.name}
                   </p>
-                  <p
-                    className={`text-sm ${
-                      theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
-                    }`}
-                  >
-                    {project.summary}
-                  </p>
                 </div>
-                <div className="flex justify-end p-4">
+                <div className="p-4 pt-0">
                   <button
                     onClick={() => openModal(project.id)}
-                    className="text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+                    className={`w-full text-sm ${
+                      theme === 'dark' 
+                        ? 'bg-blue-600 hover:bg-blue-700' 
+                        : 'bg-blue-500 hover:bg-blue-600'
+                    } text-white font-bold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105`}
                   >
                     View Details
                     <svg
@@ -120,20 +132,25 @@ const Projects = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-4 mb-4">
+        <div className="flex justify-center mt-8">
           <button
             onClick={toggleProjectsView}
-            className="flex items-center text-sm bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+            disabled={isTransitioning}
+            className={`flex items-center text-sm ${
+              theme === 'dark' 
+                ? 'bg-blue-600 hover:bg-blue-700' 
+                : 'bg-blue-500 hover:bg-blue-600'
+            } text-white font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg`}
           >
             {showAllProjects ? (
               <>
-                View Less Projects
-                <FiChevronUp className="ml-2" />
+                View Less Projects ({visibleProjects.length} of {projects.length})
+                <FiChevronUp className="ml-2 transition-transform duration-300" />
               </>
             ) : (
               <>
-                View More Projects
-                <FiChevronDown className="ml-2" />
+                View More Projects ({visibleProjects.length} of {projects.length})
+                <FiChevronDown className="ml-2 transition-transform duration-300" />
               </>
             )}
           </button>
