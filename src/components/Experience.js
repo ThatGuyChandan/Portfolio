@@ -27,12 +27,10 @@ const Experience = () => {
 
   return (
     <section
-      className={`w-full py-20 ${
-        theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'
-      }`}
+      className={`${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'} py-12`}
       id="experience"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex-grow flex flex-col justify-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 
           className={`text-4xl font-bold text-center mb-16 ${
             theme === 'dark' ? 'text-white' : 'text-gray-900'

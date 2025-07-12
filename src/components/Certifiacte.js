@@ -20,12 +20,10 @@ const Certificate = () => {
 
   return (
     <section
-      className={`w-full py-20 ${
-        theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'
-      }`}
+      className={`${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'} py-12`}
       id="certificates"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex-grow flex flex-col justify-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center mb-16">
           <FaAward className={`text-4xl mr-4 ${
             theme === 'dark' ? 'text-blue-400' : 'text-blue-600'

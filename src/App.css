@@ -3,10 +3,22 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-html,
-body {
+html, body, #root {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+/* .snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  height: 100vh;
+  scroll-snap-align: start;
+} */
 
 .skill-icon-container {
   perspective: 1000px;

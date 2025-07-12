@@ -45,7 +45,7 @@ const Projects = () => {
       className={`antialiased ${
         theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'
       } font-serif font-light py-16`}
-      id="project"
+      id="projects"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
@@ -144,12 +144,12 @@ const Projects = () => {
           >
             {showAllProjects ? (
               <>
-                View Less Projects ({visibleProjects.length} of {projects.length})
+                View Less Projects
                 <FiChevronUp className="ml-2 transition-transform duration-300" />
               </>
             ) : (
               <>
-                View More Projects ({visibleProjects.length} of {projects.length})
+                View More Projects
                 <FiChevronDown className="ml-2 transition-transform duration-300" />
               </>
             )}

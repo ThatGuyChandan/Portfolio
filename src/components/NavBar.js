@@ -20,7 +20,7 @@ function Nav() {
       const isScrolled = window.scrollY > 0;
       setScrolled(isScrolled);
   
-      const sections = ['home', 'about', 'skill', 'project', 'experience'];
+      const sections = ['home', 'about', 'skills', 'certificates', 'experience', 'projects'];
       const scrollPosition = window.scrollY + 100;
   
       for (const section of sections) {
@@ -46,11 +46,15 @@ function Nav() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-sm ${
         scrolled
-          ? 'bg-opacity-90 backdrop-blur-sm shadow-lg'
-          : 'bg-transparent'
-      } ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
+          ? (theme === 'dark'
+              ? 'bg-gray-900 bg-opacity-90 shadow-lg'
+              : 'bg-white bg-opacity-70 shadow-lg')
+          : (theme === 'dark'
+              ? 'bg-gray-900 bg-opacity-70'
+              : 'bg-white bg-opacity-50')
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -98,19 +102,31 @@ function Nav() {
                 About
               </ScrollLink>
               <ScrollLink
-                to="skill"
+                to="skills"
                 smooth={true}
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "skill" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
-                onClick={() => handleLinkClick("skill")}
+                } ${activeLink === "skills" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                onClick={() => handleLinkClick("skills")}
               >
                 Skills
               </ScrollLink>
-             
+              <ScrollLink
+                to="certificates"
+                smooth={true}
+                duration={500}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
+                  theme === 'dark'
+                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                } ${activeLink === "certificates" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                onClick={() => handleLinkClick("certificates")}
+              >
+                Certification
+              </ScrollLink>
               <ScrollLink
                 to="experience"
                 smooth={true}
@@ -125,15 +141,15 @@ function Nav() {
                 Experience
               </ScrollLink>
               <ScrollLink
-                to="project"
+                to="projects"
                 smooth={true}
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "project" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
-                onClick={() => handleLinkClick("project")}
+                } ${activeLink === "projects" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                onClick={() => handleLinkClick("projects")}
               >
                 Projects
               </ScrollLink>
@@ -312,7 +328,7 @@ function Nav() {
                 About
               </ScrollLink>
               <ScrollLink
-                to="skill"
+                to="skills"
                 smooth={true}
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
@@ -320,12 +336,12 @@ function Nav() {
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                 }`}
-                onClick={() => handleLinkClick("skill")}
+                onClick={() => handleLinkClick("skills")}
               >
                 Skills
               </ScrollLink>
               <ScrollLink
-                to="project"
+                to="certificates"
                 smooth={true}
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
@@ -333,9 +349,9 @@ function Nav() {
                     ? 'text-gray-300 hover:text-white hover:bg-gray-800'
                     : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                 }`}
-                onClick={() => handleLinkClick("project")}
+                onClick={() => handleLinkClick("certificates")}
               >
-                Projects
+                Certification
               </ScrollLink>
               <ScrollLink
                 to="experience"
@@ -349,6 +365,19 @@ function Nav() {
                 onClick={() => handleLinkClick("experience")}
               >
                 Experience
+              </ScrollLink>
+              <ScrollLink
+                to="projects"
+                smooth={true}
+                duration={500}
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
+                  theme === 'dark'
+                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                }`}
+                onClick={() => handleLinkClick("projects")}
+              >
+                Projects
               </ScrollLink>
             </div>
           </div>

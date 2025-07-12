@@ -29,8 +29,8 @@ const Footer = () => {
   };
 
   return (
-    <div className="bg-gray-900 " id="contact">
-      <div className=" p-12 sm:p-24 flex flex-col md:flex-row gap-12">
+    <footer className="min-h-screen flex flex-col justify-center bg-gray-900" id="contact">
+      <div className="flex-grow flex flex-col justify-center p-12 sm:p-24 md:flex-row gap-12">
         <div className="flex flex-col gap-5 md:w-1/2">
           <div className="text-white py-8">
             <h1 className=" text-lg md:text-xl py-4 border-b-4  border-blue-900  font-bold">
@@ -197,7 +197,7 @@ const Footer = () => {
         </div>
         {/* <p>&copy; {currentYear} . All rights reserved.</p> */}
       </div>
-    </div>
+    </footer>
   );
 };
 
