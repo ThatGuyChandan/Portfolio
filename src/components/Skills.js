@@ -31,7 +31,7 @@ const Skills = () => {
         <div className="space-y-12">
           {skillsByCategory.map(({ category, skills }) => (
             <div key={category} className={`rounded-2xl p-8 border ${
-              theme === 'dark' ? 'bg-white-100 border-gray-700/50' : 'bg-white/50 border-neutral-300/50'
+              theme === 'dark' ? 'bg-gray-800/50 border-gray-700/50' : 'bg-neutral-100 border-neutral-300/50'
             }`}>
               <h2 className={`text-3xl font-bold uppercase tracking-wider mb-6 font-serif ${
                 theme === 'dark' ? 'text-white' : 'text-gray-800'
@@ -44,7 +44,7 @@ const Skills = () => {
                   <div
                     key={skill.id}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-full shadow-lg transition-transform duration-200 hover:scale-105 ${
-                      theme === 'dark' ? 'bg-gray-700 text-white' : 'bg-neutral text-white'
+                      theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-neutral-dark text-white'
                     }`}
                   >
                     {skill.icon && <span className="text-xl">{skill.icon}</span>}
