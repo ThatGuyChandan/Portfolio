@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# My Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a personal portfolio website built with React, showcasing my projects, skills, and experience. The website is designed to be responsive, visually appealing, and easy to navigate.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Responsive Design:** Optimized for various screen sizes, from mobile devices to large desktops.
+- **Interactive UI:** Engaging user interface with subtle animations and transitions.
+- **Dynamic Project Showcase:** Projects are loaded from a JSON file, making it easy to add and manage new projects. Each project has a dedicated modal for detailed information.
+- **Categorized Skills:** Skills and technologies are categorized and displayed with relevant icons for better readability and understanding of expertise.
+- **Theme Toggle:** Light and dark mode toggle for personalized browsing experience.
+- **Modern Styling:** Built with Tailwind CSS for efficient and utility-first styling.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:**
+  - React.js
+  - Tailwind CSS
+  - Framer Motion (for animations)
+  - React-Scroll (for smooth scrolling navigation)
+  - React-Typewriter-Effect (for typing animation)
+  - React-TSParticles (for background particles)
+  - React-Icons (for various icons)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+portfolio/
+├── public/
+├── src/
+│   ├── components/ (Reusable UI components like NavBar, Footer, ProjectCard, etc.)
+│   ├── context/ (React Context for theme management)
+│   ├── data/ (JSON files for project and skill data)
+│   ├── App.js (Main application component)
+│   ├── index.js (Entry point of the React application)
+│   └── ... (other CSS and test files)
+├── package.json
+├── tailwind.config.js
+└── ... (other configuration files)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To run this project locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  **Clone the repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone https://github.com/ThatGuyChandan/Portfolio.git
+    cd Portfolio
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.  **Install dependencies:**
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3.  **Start the development server:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Deployment
 
-## Learn More
+The project is configured for deployment on GitHub Pages. You can deploy it by running:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run deploy
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Customization
 
-### Code Splitting
+- **Projects:** Add or modify project details in `src/data/projects.json`.
+- **Skills:** Update your skills and categories in `src/data/SkillData.js`.
+- **Content:** Modify text content in respective components (`Home.js`, `About.js`, etc.).
+- **Styling:** Customize the theme and styles in `tailwind.config.js` and individual component files.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is open source and available under the [MIT License](LICENSE).
