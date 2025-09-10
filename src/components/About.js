@@ -29,12 +29,12 @@ const About = () => {
         <div className="w-20 h-1 mb-8 bg-blue-600 rounded-full mx-auto"></div>
         <div className="w-full text-center space-y-6">
           <p className="text-lg sm:text-xl leading-relaxed">
-            I'm a software developer who believes in the power of clean code and thoughtful design. When I'm not crafting digital solutions, you'll find me exploring the latest tech trends or sharing insights through my blog. I thrive on challenges that push boundaries and love collaborating with teams to build something meaningful. Every line of code I write is a step toward making technology more accessible and impactful.
+            I'm a passionate software developer dedicated to building beautiful, functional, and user-centric digital experiences. I thrive on solving complex problems and turning ideas into reality. My journey in tech is driven by a relentless curiosity and a desire to learn and grow. When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing my knowledge with the community through my blog.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
           <a
-            href="https://drive.google.com/file/d/1zhgFZk7_cP8COBFRlhWkgv72T1yU68OQ/view?usp=sharing"
+            href="https://drive.google.com/file/d/1haqJUe181JJTxl5qwORL1citM6-pOi0F/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105 gap-2"
@@ -42,7 +42,7 @@ const About = () => {
             <FaFileAlt className="text-xl" /> Resume
           </a>
           <a
-            href="https://medium.com/@chandanthakur.k123"
+            href="https://blogsbychandan.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105 gap-2"

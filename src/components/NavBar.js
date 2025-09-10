@@ -46,14 +46,14 @@ function Nav() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-sm ${
+      className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-sm font-sans ${
         scrolled
           ? (theme === 'dark'
-              ? 'bg-gray-900 bg-opacity-90 shadow-lg'
-              : 'bg-white bg-opacity-70 shadow-lg')
+              ? 'bg-gray-900/80 shadow-lg'
+              : 'bg-white/80 shadow-lg')
           : (theme === 'dark'
-              ? 'bg-gray-900 bg-opacity-70'
-              : 'bg-white bg-opacity-50')
+              ? 'bg-gray-900/60'
+              : 'bg-white/60')
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +65,7 @@ function Nav() {
               duration={500}
               className={`text-xl font-bold ${
                 theme === 'dark' ? 'text-white' : 'text-gray-900'
-              } hover:text-blue-500 transition-colors duration-300`}
+              } hover:text-primary transition-colors duration-300`}
               onClick={() => handleLinkClick("home")}
             >
               Portfolio
@@ -81,9 +81,9 @@ function Nav() {
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "home" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
+                } ${activeLink === "home" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-neutral-100') : ''}`}
                 onClick={() => handleLinkClick("home")}
               >
                 Home
@@ -94,9 +94,9 @@ function Nav() {
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "about" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
+                } ${activeLink === "about" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-neutral-100') : ''}`}
                 onClick={() => handleLinkClick("about")}
               >
                 About
@@ -107,9 +107,9 @@ function Nav() {
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "skills" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
+                } ${activeLink === "skills" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-neutral-100') : ''}`}
                 onClick={() => handleLinkClick("skills")}
               >
                 Skills
@@ -120,9 +120,9 @@ function Nav() {
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "certificates" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
+                } ${activeLink === "certificates" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-neutral-100') : ''}`}
                 onClick={() => handleLinkClick("certificates")}
               >
                 Certification
@@ -133,9 +133,9 @@ function Nav() {
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "experience" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
+                } ${activeLink === "experience" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-neutral-100') : ''}`}
                 onClick={() => handleLinkClick("experience")}
               >
                 Experience
@@ -146,9 +146,9 @@ function Nav() {
                 duration={500}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                } ${activeLink === "projects" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-gray-100') : ''}`}
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
+                } ${activeLink === "projects" ? (theme === 'dark' ? 'text-white bg-gray-800' : 'text-gray-900 bg-neutral-100') : ''}`}
                 onClick={() => handleLinkClick("projects")}
               >
                 Projects
@@ -159,8 +159,8 @@ function Nav() {
                   target="blank"
                   className={`p-2 rounded-full transition-colors duration-300 ${
                     theme === 'dark'
-                      ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                      ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                      : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                   }`}
                 >
                   <FiGithub size={20} />
@@ -170,8 +170,8 @@ function Nav() {
                   target="blank"
                   className={`p-2 rounded-full transition-colors duration-300 ${
                     theme === 'dark'
-                      ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                      ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                      : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                   }`}
                 >
                   <FiLinkedin size={20} />
@@ -181,8 +181,8 @@ function Nav() {
                   target="blank"
                   className={`p-2 rounded-full transition-colors duration-300 ${
                     theme === 'dark'
-                      ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                      ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                      : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                   }`}
                 >
                   <FiCode size={20} />
@@ -191,8 +191,8 @@ function Nav() {
                   onClick={toggleTheme}
                   className={`p-2 rounded-full transition-colors duration-300 ${
                     theme === 'dark'
-                      ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                      : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                      ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                      : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                   }`}
                 >
                   {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
@@ -209,8 +209,8 @@ function Nav() {
                 target="blank"
                 className={`p-2 rounded-full transition-colors duration-300 ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
               >
                 <FiGithub size={20} />
@@ -220,8 +220,8 @@ function Nav() {
                 target="blank"
                 className={`p-2 rounded-full transition-colors duration-300 ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
               >
                 <FiLinkedin size={20} />
@@ -231,8 +231,8 @@ function Nav() {
                 target="blank"
                 className={`p-2 rounded-full transition-colors duration-300 ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
               >
                 <FiCode size={20} />
@@ -241,8 +241,8 @@ function Nav() {
                 onClick={toggleTheme}
                 className={`p-2 rounded-full transition-colors duration-300 ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
               >
                 {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
@@ -252,8 +252,8 @@ function Nav() {
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md transition-colors duration-300 ${
                 theme === 'dark'
-                  ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                  ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                  : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
               }`}
             >
               <svg
@@ -266,14 +266,14 @@ function Nav() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 ) : (
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
+                    strokeWidth="2"
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 )}
@@ -307,8 +307,8 @@ function Nav() {
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
                 onClick={() => handleLinkClick("home")}
               >
@@ -320,8 +320,8 @@ function Nav() {
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
                 onClick={() => handleLinkClick("about")}
               >
@@ -333,8 +333,8 @@ function Nav() {
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
                 onClick={() => handleLinkClick("skills")}
               >
@@ -346,8 +346,8 @@ function Nav() {
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
                 onClick={() => handleLinkClick("certificates")}
               >
@@ -359,8 +359,8 @@ function Nav() {
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
                 onClick={() => handleLinkClick("experience")}
               >
@@ -372,8 +372,8 @@ function Nav() {
                 duration={500}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 cursor-pointer ${
                   theme === 'dark'
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    ? 'text-neutral-300 hover:text-white hover:bg-gray-800'
+                    : 'text-neutral-700 hover:text-gray-900 hover:bg-neutral-100'
                 }`}
                 onClick={() => handleLinkClick("projects")}
               >

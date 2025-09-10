@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
@@ -14,7 +15,7 @@ const Home = () => {
   return (
     <div
       id="home"
-      className="relative w-full h-screen bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden"
+      className="relative w-full h-screen bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden font-sans"
     >
       {/* Particle Background */}
       <Particles
@@ -35,7 +36,7 @@ const Home = () => {
               },
             },
             color: {
-              value: "#3b82f6",
+              value: "#ffffff",
             },
             shape: {
               type: "circle",
@@ -63,7 +64,7 @@ const Home = () => {
             links: {
               enable: true,
               distance: 150,
-              color: "#3b82f6",
+              color: "#ffffff",
               opacity: 0.4,
               width: 1,
             },
@@ -120,10 +121,10 @@ const Home = () => {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
-            Hello, I'm <span className="text-blue-400">Chandan Thakur</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 font-serif">
+            Hello, I'm <span className="text-primary-light">Chandan Thakur</span>
           </h1>
-          <div className="text-xl md:text-3xl lg:text-4xl font-semibold text-blue-400 mb-8">
+          <div className="text-xl md:text-3xl lg:text-4xl font-semibold text-primary-light mb-8">
             <Typewriter
               options={{
                 strings: [
@@ -138,7 +139,7 @@ const Home = () => {
               }}
             />
           </div>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-8">
             I build exceptional digital experiences that make an impact. 
             Specializing in creating responsive, user-friendly web applications 
             with modern technologies.
@@ -156,25 +157,25 @@ const Home = () => {
             href="https://github.com/ThatGuyChandan"
             target="_blank"
             rel="noopener noreferrer"
-            className="group p-3 rounded-full border border-blue-400 hover:bg-blue-400 transition-all duration-300"
+            className="group p-3 rounded-full border border-primary-light hover:bg-primary-light transition-all duration-300"
           >
-            <FiGithub className="w-6 h-6 group-hover:text-white" />
+            <FiGithub className="w-6 h-6 text-white group-hover:text-gray-900" />
           </a>
           <a
             href="https://www.linkedin.com/in/chandan-thakur-969703250/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group p-3 rounded-full border border-blue-400 hover:bg-blue-400 transition-all duration-300"
+            className="group p-3 rounded-full border border-primary-light hover:bg-primary-light transition-all duration-300"
           >
-            <FiLinkedin className="w-6 h-6 group-hover:text-white" />
+            <FiLinkedin className="w-6 h-6 text-white group-hover:text-gray-900" />
           </a>
           <a
             href="https://leetcode.com/u/user5092N/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group p-3 rounded-full border border-blue-400 hover:bg-blue-400 transition-all duration-300"
+            className="group p-3 rounded-full border border-primary-light hover:bg-primary-light transition-all duration-300"
           >
-            <FiCode className="w-6 h-6 group-hover:text-white" />
+            <FiCode className="w-6 h-6 text-white group-hover:text-gray-900" />
           </a>
         </motion.div>
 
@@ -186,8 +187,8 @@ const Home = () => {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center">
-            <span className="text-sm text-gray-400 mb-2">Scroll Down</span>
-            <div className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center p-1">
+            <span className="text-sm text-neutral-400 mb-2">Scroll Down</span>
+            <div className="w-6 h-10 border-2 border-primary-light rounded-full flex justify-center p-1">
               <motion.div
                 animate={{
                   y: [0, 10, 0],
@@ -197,7 +198,7 @@ const Home = () => {
                   repeat: Infinity,
                   repeatType: "loop",
                 }}
-                className="w-1 h-1 bg-blue-400 rounded-full"
+                className="w-1 h-1 bg-primary-light rounded-full"
               />
             </div>
           </div>

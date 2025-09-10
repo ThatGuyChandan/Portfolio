@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import "./App.css";
 import About from "./components/About";
-import Certifiacte from "./components/Certifiacte";
+import Certifiacte from "./components/Certificate";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
