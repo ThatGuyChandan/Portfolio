@@ -47,9 +47,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="text-white flex flex-wrap gap-2 items-center py-1">
+            <div className="text-white flex flex-wrap gap-1 sm:gap-2 items-center py-1">
               <svg
-                className="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer flex-shrink-0"
+                className="h-6 w-6 sm:h-8 sm:w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer flex-shrink-0"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -63,11 +63,11 @@ const Footer = () => {
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <polyline points="3 7 12 13 21 7" />
               </svg>
-              <p className="text-sm break-all">contact.chandanthakur@gmail.com</p>
+              <p className="text-xs sm:text-sm break-all">contact.chandanthakur@gmail.com</p>
             </div>
-            <div className="text-white flex gap-2 items-center py-1">
+            <div className="text-white flex gap-1 sm:gap-2 items-center py-1">
               <svg
-                className="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer"
+                className="h-6 w-6 sm:h-8 sm:w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -85,7 +85,7 @@ const Footer = () => {
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              <p className="text-sm"> Shimla, India</p>
+              <p className="text-xs sm:text-sm"> Shimla, India</p>
             </div>
           </div>
         </div>
