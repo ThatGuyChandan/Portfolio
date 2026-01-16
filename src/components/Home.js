@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FiGithub, FiLinkedin, FiCode } from "react-icons/fi";
 import Spline from "@splinetool/react-spline";
-import KeyboardHero from "./KeyboardHero";
 
 const Home = () => {
   const { scrollY } = useScroll();
