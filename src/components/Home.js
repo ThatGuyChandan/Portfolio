@@ -96,7 +96,7 @@ const Home = () => {
 
         {/* Right Side - Image (50%) */}
         <div className="relative h-[300px] md:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden border border-white/10 bg-slate-800/40">
-          <img src="/assets/me.png" alt="Chandan Thakur" className="absolute inset-0 w-full h-full object-cover" />
+          <img src={`${process.env.PUBLIC_URL}/assets/me.png`} alt="Chandan Thakur" className="absolute inset-0 w-full h-full object-cover" />
           {/* Subtle overlay for readability */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent z-10" />
         </div>
