@@ -2,7 +2,6 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FiGithub, FiLinkedin, FiCode } from "react-icons/fi";
-import Spline from "@splinetool/react-spline";
 
 const Home = () => {
   const { scrollY } = useScroll();
@@ -95,10 +94,11 @@ const Home = () => {
           </div>
         </motion.div>
 
-        {/* Right Side - 3D Keyboard (50%) */}
+        {/* Right Side - Placeholder (50%) */}
         <div className="relative h-[300px] md:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden border border-white/10 bg-slate-800/40">
-          {/* Spline interactive scene */}
-          <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" />
+          <div className="absolute inset-0 z-0 flex items-center justify-center">
+            <p className="text-white/50">3D content will be here</p>
+          </div>
           {/* Subtle overlay for readability */}
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent z-10" />
         </div>
