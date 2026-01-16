@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useTheme } from '../context/ThemeContext';
 import { FiExternalLink } from 'react-icons/fi';
-import { FaAward } from 'react-icons/fa';
 import certi from "../data/Certificate";
 
 const Certificate = () => {
@@ -24,16 +23,12 @@ const Certificate = () => {
       id="certificates"
     >
       <div className="flex-grow flex flex-col justify-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center mb-16">
-          <FaAward className={`text-4xl mr-4 ${
-            theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-          }`} />
-          <h1 
-            className={`text-4xl font-bold ${
-              theme === 'dark' ? 'text-white' : 'text-gray-900'
-            }`}
-          >
+        <div className="text-center mb-12">
+          <h2 className="text-base font-bold tracking-widest uppercase text-blue-500">
             Certifications
+          </h2>
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            My Credentials
           </h1>
         </div>
 

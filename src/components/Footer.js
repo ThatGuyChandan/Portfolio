@@ -32,11 +32,14 @@ const Footer = () => {
     <footer className="min-h-screen flex flex-col justify-center bg-gray-900" id="contact">
       <div className="flex-grow flex flex-col justify-center p-12 sm:p-24 md:flex-row gap-12">
         <div className="flex flex-col gap-5 md:w-1/2">
-          <div className="text-white py-8">
-            <h1 className=" text-lg md:text-xl py-4 border-b-4  border-blue-900  font-bold">
-              Drop Me a Message
+          <div className="text-white py-8 text-center md:text-left">
+            <h2 className="text-base font-bold tracking-widest uppercase text-blue-500">
+              Contact
+            </h2>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2">
+              Get in Touch
             </h1>
-            <p className="text-sm lg:text-lg pt-8">
+            <p className="text-xl pt-8">
               Have a question, suggestion, or just want to say hello? I'd love
               to hear from you! Fill out the form below, and I'll get back to
               you as soon as possible.
@@ -44,9 +47,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="text-white flex gap-2 items-center py-1">
+            <div className="text-white flex flex-wrap gap-2 items-center py-1">
               <svg
-                className="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer"
+                className="h-8 w-8 text-white rounded-full border border-white p-1 hover:bg-blue-600 cursor-pointer flex-shrink-0"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -60,7 +63,7 @@ const Footer = () => {
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <polyline points="3 7 12 13 21 7" />
               </svg>
-              <p className="text-sm ">contact.chandanthakur@gmail.com</p>
+              <p className="text-sm break-all">contact.chandanthakur@gmail.com</p>
             </div>
             <div className="text-white flex gap-2 items-center py-1">
               <svg
@@ -87,7 +90,6 @@ const Footer = () => {
           </div>
         </div>
         <div className="max-w-md  p-4  bg-white rounded shadow-md md:w-1/2">
-          <h1 className="text-2xl font-bold  mb-4 text-center">Contact Me</h1>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
@@ -147,7 +149,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=" text-center text-white ">
-        <h1 className="p-4 border-b-2 border-blue-900  ">Follow Me</h1>
+        <h3 className="text-xl font-semibold">Follow Me</h3>
         <div className="inline-flex p-4">
           <a
             href="https://github.com/ThatGuyChandan"

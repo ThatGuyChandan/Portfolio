@@ -7,6 +7,8 @@
 # testing
 /coverage
 
+inspiration
+
 # production
 /build
 .env

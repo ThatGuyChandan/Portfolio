@@ -31,13 +31,14 @@ const Experience = () => {
       id="experience"
     >
       <div className="flex-grow flex flex-col justify-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 
-          className={`text-4xl font-bold text-center mb-16 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}
-        >
-          Experience
-        </h1>
+        <div className="text-center mb-12">
+          <h2 className="text-base font-bold tracking-widest uppercase text-blue-500">
+            Experience
+          </h2>
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            My Professional Journey
+          </h1>
+        </div>
         
         <div className="space-y-8">
           {experiences.map((exp) => (

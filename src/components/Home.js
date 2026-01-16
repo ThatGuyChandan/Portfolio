@@ -1,130 +1,38 @@
-
 import React from "react";
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiCode } from "react-icons/fi";
+import Spline from "@splinetool/react-spline";
+import KeyboardHero from "./KeyboardHero";
 
 const Home = () => {
-  const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
-  }, []);
+  const { scrollY } = useScroll();
+  const ySlow = useTransform(scrollY, [0, 600], [0, 80]);
+  const yFast = useTransform(scrollY, [0, 600], [0, 140]);
+  const opacity = useTransform(scrollY, [0, 400], [1, 0.2]);
 
   return (
-    <div
+    <section
       id="home"
-      className="relative w-full h-screen bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden font-sans"
+      className="relative min-h-screen pt-24 overflow-hidden bg-slate-950"
     >
-      {/* Particle Background */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        className="absolute inset-0"
-        options={{
-          fullScreen: {
-            enable: false,
-            zIndex: 0,
-          },
-          particles: {
-            number: {
-              value: 80,
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-            },
-            color: {
-              value: "#ffffff",
-            },
-            shape: {
-              type: "circle",
-            },
-            opacity: {
-              value: 0.5,
-              random: true,
-              animation: {
-                enable: true,
-                speed: 1,
-                minimumValue: 0.1,
-                sync: false,
-              },
-            },
-            size: {
-              value: 3,
-              random: true,
-              animation: {
-                enable: true,
-                speed: 2,
-                minimumValue: 0.1,
-                sync: false,
-              },
-            },
-            links: {
-              enable: true,
-              distance: 150,
-              color: "#ffffff",
-              opacity: 0.4,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 1,
-              direction: "none",
-              random: false,
-              straight: false,
-              outModes: {
-                default: "out",
-              },
-              attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200,
-              },
-            },
-          },
-          interactivity: {
-            detectsOn: "canvas",
-            events: {
-              onHover: {
-                enable: true,
-                mode: "grab",
-              },
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-              resize: true,
-            },
-            modes: {
-              grab: {
-                distance: 140,
-                links: {
-                  opacity: 1,
-                },
-              },
-              push: {
-                quantity: 4,
-              },
-            },
-          },
-          detectRetina: true,
-        }}
+      {/* Background gradient layers - inspiration style */}
+      <motion.div
+        style={{ y: ySlow }}
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] rounded-full bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.25),transparent_60%)] blur-3xl"
+      />
+      <motion.div
+        style={{ y: yFast }}
+        className="pointer-events-none absolute top-20 right-0 w-[700px] h-[700px] rounded-full bg-[radial-gradient(circle_at_center,rgba(96,165,250,0.18),transparent_60%)] blur-2xl"
       />
 
-      {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 font-serif">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[90vh]">
+        {/* Left Side - Content (50%) */}
+        <motion.div style={{ opacity }} className="space-y-6 z-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
             Hello, I'm <span className="text-primary-light">Chandan Thakur</span>
           </h1>
-          <div className="text-xl md:text-3xl lg:text-4xl font-semibold text-primary-light mb-8">
+          <div className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary-light">
             <Typewriter
               options={{
                 strings: [
@@ -139,72 +47,78 @@ const Home = () => {
               }}
             />
           </div>
-          <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-white/75 max-w-xl">
             I build exceptional digital experiences that make an impact. 
             Specializing in creating responsive, user-friendly web applications 
             with modern technologies.
           </p>
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex space-x-6 mt-8"
-        >
-          <a
-            href="https://github.com/ThatGuyChandan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-3 rounded-full border border-primary-light hover:bg-primary-light transition-all duration-300"
-          >
-            <FiGithub className="w-6 h-6 text-white group-hover:text-gray-900" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/chandan-thakur-969703250/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-3 rounded-full border border-primary-light hover:bg-primary-light transition-all duration-300"
-          >
-            <FiLinkedin className="w-6 h-6 text-white group-hover:text-gray-900" />
-          </a>
-          <a
-            href="https://leetcode.com/u/user5092N/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-3 rounded-full border border-primary-light hover:bg-primary-light transition-all duration-300"
-          >
-            <FiCode className="w-6 h-6 text-white group-hover:text-gray-900" />
-          </a>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="flex flex-col items-center">
-            <span className="text-sm text-neutral-400 mb-2">Scroll Down</span>
-            <div className="w-6 h-10 border-2 border-primary-light rounded-full flex justify-center p-1">
-              <motion.div
-                animate={{
-                  y: [0, 10, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
-                className="w-1 h-1 bg-primary-light rounded-full"
-              />
-            </div>
+          <div className="flex gap-3">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center rounded-lg bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 transition-colors shadow-lg shadow-blue-500/25"
+            >
+              View Projects
+            </a>
+            <a
+              href="#about"
+              className="inline-flex items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 text-white px-5 py-3 transition-colors"
+            >
+              About Me
+            </a>
+          </div>
+          
+          {/* Social Links */}
+          <div className="flex space-x-6 pt-4">
+            <a
+              href="https://github.com/ThatGuyChandan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 rounded-full border border-white/20 hover:bg-white/10 transition-all duration-300"
+            >
+              <FiGithub className="w-6 h-6 text-white" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/chandan-thakur-969703250/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 rounded-full border border-white/20 hover:bg-white/10 transition-all duration-300"
+            >
+              <FiLinkedin className="w-6 h-6 text-white" />
+            </a>
+            <a
+              href="https://leetcode.com/u/user5092N/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-3 rounded-full border border-white/20 hover:bg-white/10 transition-all duration-300"
+            >
+              <FiCode className="w-6 h-6 text-white" />
+            </a>
           </div>
         </motion.div>
+
+        {/* Right Side - 3D Keyboard (50%) */}
+        <div className="relative h-[300px] md:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden border border-white/10 bg-slate-800/40">
+          {/* Spline interactive scene */}
+          <Spline scene="https://prod.spline.design/VJLoxp84lCdVfdZu/scene.splinecode" />
+          {/* Subtle overlay for readability */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent z-10" />
+        </div>
       </div>
-    </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/70 text-sm z-10">
+        <div className="flex items-center gap-2">
+          <span>Scroll</span>
+          <div className="w-5 h-8 rounded-full border border-white/30 flex items-start justify-center p-1">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ repeat: Infinity, duration: 1.6 }}
+              className="w-1 h-3 rounded bg-white/60"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

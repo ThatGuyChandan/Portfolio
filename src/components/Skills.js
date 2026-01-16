@@ -17,23 +17,21 @@ const Skills = () => {
       theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-900 text-white'
     } pt-20 pb-20 px-4`} id="skills">
       <div className="max-w-7xl mx-auto w-full">
-        <h1 className={`text-5xl font-bold text-center mb-4 font-serif ${
-          theme === 'dark' ? 'text-primary-light' : 'text-primary-dark'
-        }`}>
-          Skills & Technologies
-        </h1>
-        <p className={`text-center mb-12 text-lg ${
-          theme === 'dark' ? 'text-neutral-300' : 'text-gray-400'
-        }`}>
-          A comprehensive collection of my technical expertise
-        </p>
+        <div className="text-center mb-12">
+          <h2 className="text-base font-bold tracking-widest uppercase text-blue-500">
+            Skills
+          </h2>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2">
+            My Technical Expertise
+          </h1>
+        </div>
         
         <div className="space-y-12">
           {skillsByCategory.map(({ category, skills }) => (
             <div key={category} className={`rounded-2xl p-8 border ${
               theme === 'dark' ? 'bg-gray-800/50 border-gray-700/50' : 'bg-neutral-100 border-neutral-300/50'
             }`}>
-              <h2 className={`text-3xl font-bold uppercase tracking-wider mb-6 font-serif ${
+              <h2 className={`text-3xl font-bold uppercase tracking-wider mb-6 ${
                 theme === 'dark' ? 'text-white' : 'text-gray-800'
               }`}>
                 {category}

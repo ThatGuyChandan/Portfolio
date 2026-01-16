@@ -1,65 +1,65 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '../context/ThemeContext';
+import { ArrowUpRight } from 'lucide-react';
 
 const ProjectCard = ({ project, openModal }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8 transform transition duration-500 hover:scale-105">
+    <div
+      className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8"
+      onClick={() => openModal(project.id)}
+    >
       <div
-        className={`shadow-2xl rounded-xl cursor-pointer overflow-hidden h-full flex flex-col font-sans ${
-          theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-        }`}>
-        <div
-          className="relative h-48 sm:h-56 overflow-hidden group"
-          style={{
-            backgroundImage: `url(${project.imageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
-          <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-            <p className={`text-sm text-white`}>
-              {project.summary}
-            </p>
+        className={`group rounded-2xl border overflow-hidden cursor-pointer h-full flex flex-col ${
+          theme === 'dark'
+            ? 'border-white/10 bg-slate-800/40 hover:border-white/20'
+            : 'border-gray-200 bg-white hover:border-gray-300'
+        } transition-colors`}
+      >
+        <div className="relative h-44 bg-slate-900">
+          <img
+            src={project.imageUrl}
+            alt={project.name}
+            className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+        </div>
+        <div className="p-5 flex-grow flex flex-col">
+          <div className="flex-grow">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className={`font-semibold tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  {project.name}
+                </h3>
+                <p className={`text-sm mt-1 ${theme === 'dark' ? 'text-white/70' : 'text-gray-600'}`}>
+                  {project.summary}
+                </p>
+              </div>
+              <div
+                className={`shrink-0 mt-1 rounded-full p-2 transition-colors ${
+                  theme === 'dark'
+                    ? 'bg-white/10 text-white group-hover:bg-white/20'
+                    : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
+                }`}
+              >
+                <ArrowUpRight size={18} />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="p-6 flex-grow">
-          <p
-            className={`text-xl font-bold mb-2 font-serif ${
-              theme === 'dark' ? 'text-primary-light' : 'text-primary-dark'
-            }`}>
-            {project.name}
-          </p>
-        </div>
-        <div className="p-4 pt-0">
-          <button
-            onClick={() => openModal(project.id)}
-            className={`w-full text-sm font-bold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 ${
-              theme === 'dark'
-                ? 'bg-primary hover:bg-primary-dark text-white'
-                : 'bg-primary hover:bg-primary-dark text-white'
-            }`}>
-            View Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-4 h-4 ml-2 inline-block"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
-          </button>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {project.technologies && project.technologies.map((tech) => (
+              <span
+                key={tech}
+                className={`text-xs px-2 py-1 rounded ${
+                  theme === 'dark' ? 'bg-white/10 text-white/80' : 'bg-gray-100 text-gray-700'
+                }`}
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -72,6 +72,7 @@ ProjectCard.propTypes = {
     name: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
+    technologies: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   openModal: PropTypes.func.isRequired,
 };

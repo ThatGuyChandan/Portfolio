@@ -1,6 +1,6 @@
 import React from "react";
-import { useTheme } from '../context/ThemeContext';
-import { FaFileAlt, FaBlog } from 'react-icons/fa';
+import { useTheme } from "../context/ThemeContext";
+import { FaFileAlt, FaBlog } from "react-icons/fa";
 
 const About = () => {
   const { theme } = useTheme();
@@ -8,47 +8,83 @@ const About = () => {
   return (
     <section
       id="about"
-      className={`relative flex flex-col justify-center items-center px-4 min-h-screen ${
-        theme === 'dark'
-          ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white'
-          : 'bg-gradient-to-br from-blue-100 via-white to-blue-200 text-gray-900'
-      } animate-fade-in`}
+      className={`relative py-20 px-4 min-h-screen flex items-center justify-center ${
+        theme === "dark"
+          ? "bg-slate-950 text-white"
+          : "bg-gray-100 text-gray-900"
+      }`}
     >
-      {/* Decorative SVG Blob */}
-      <svg className="absolute -top-32 -left-32 w-96 h-96 opacity-10 pointer-events-none" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#3B82F6" d="M44.8,-67.2C56.7,-59.2,63.7,-44.2,68.2,-29.2C72.7,-14.2,74.7,0.8,70.2,14.7C65.7,28.6,54.7,41.4,41.2,50.2C27.7,59,11.8,63.8,-2.7,67.1C-17.2,70.4,-30.4,72.2,-41.7,65.2C-53,58.2,-62.4,42.4,-67.2,25.6C-72,8.8,-72.2,-9.9,-65.7,-24.7C-59.2,-39.5,-46,-50.3,-31.7,-57.7C-17.4,-65.1,-2,-69.1,13.7,-72.1C29.4,-75.1,44.8,-67.2,44.8,-67.2Z" transform="translate(100 100)" />
-      </svg>
-
-      {/* Card Container */}
-      <div className={`relative z-10 w-full max-w-3xl rounded-3xl shadow-2xl p-8 md:p-14 flex flex-col items-center ${
-        theme === 'dark'
-          ? 'bg-gray-900/80 backdrop-blur-md border border-blue-800'
-          : 'bg-white/80 backdrop-blur-md border border-blue-200'
-      }`}>
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 text-center">About Me</h1>
-        <div className="w-20 h-1 mb-8 bg-blue-600 rounded-full mx-auto"></div>
-        <div className="w-full text-center space-y-6">
-          <p className="text-lg sm:text-xl leading-relaxed">
-            I'm a passionate software developer dedicated to building beautiful, functional, and user-centric digital experiences. I thrive on solving complex problems and turning ideas into reality. My journey in tech is driven by a relentless curiosity and a desire to learn and grow. When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing my knowledge with the community through my blog.
-          </p>
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="text-center mb-12">
+          <h2 className="text-base font-bold tracking-widest uppercase text-blue-500">
+            About
+          </h2>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2">
+            A little more about me
+          </h1>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
-          <a
-            href="https://drive.google.com/file/d/1haqJUe181JJTxl5qwORL1citM6-pOi0F/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105 gap-2"
-          >
-            <FaFileAlt className="text-xl" /> Resume
-          </a>
-          <a
-            href="https://blogsbychandan.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105 gap-2"
-          >
-            <FaBlog className="text-xl" /> My Blog
-          </a>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column - Text */}
+          <div className="lg:col-span-7 space-y-4 text-xl">
+            <p className={`${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>
+              I'm a passionate software developer dedicated to building beautiful,
+              functional, and user-centric digital experiences. I thrive on
+              solving complex problems and turning ideas into reality. My journey
+              in tech is driven by a relentless curiosity and a desire to learn
+              and grow.
+            </p>
+            <p className={`${theme === 'dark' ? 'text-white/70' : 'text-gray-600'}`}>
+              When I'm not coding, I enjoy exploring new technologies,
+              contributing to open-source projects, and sharing my knowledge with
+              the community through my blog.
+            </p>
+          </div>
+
+          {/* Right Column - Highlights & Buttons */}
+          <div className="lg:col-span-5">
+            <div
+              className={`rounded-2xl p-6 ${
+                theme === "dark"
+                  ? "bg-slate-800/40 border border-white/10"
+                  : "bg-white/80 border border-blue-200"
+              }`}
+            >
+              <h3 className="font-semibold text-2xl mb-4">Highlights</h3>
+              <ul className={`space-y-3 ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'} text-lg`}>
+                <li className="flex items-center gap-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Building scalable web applications</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Developing robust APIs and backend services</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-blue-500">•</span>
+                  <span>Implementing intuitive user interfaces</span>
+                </li>
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
+                <a
+                  href="https://drive.google.com/file/d/1haqJUe181JJTxl5qwORL1citM6-pOi0F/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105 gap-2"
+                >
+                  <FaFileAlt className="text-xl" /> Resume
+                </a>
+                <a
+                  href="https://blogsbychandan.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105 gap-2"
+                >
+                  <FaBlog className="text-xl" /> My Blog
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
