@@ -1,27 +1,15 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useTheme } from '../context/ThemeContext';
 import projectsData from "../data/projects.json";
 import ProjectCard from './ProjectCard';
 import useWindowSize from '../hooks/useWindowSize';
 
-const ProjectModal = lazy(() => import('./ProjectModal'));
-
 const Projects = () => {
   const [projects] = useState(projectsData);
-  const [selectedProject, setSelectedProject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { theme } = useTheme();
   const { width } = useWindowSize();
-
-  const openModal = (projectId) => {
-    const project = projects.find((p) => p.id === projectId);
-    setSelectedProject(project);
-  };
-
-  const closeModal = () => {
-    setSelectedProject(null);
-  };
 
   const getProjectsToShow = () => {
     if (width < 768) return 1;
@@ -68,7 +56,7 @@ const Projects = () => {
         <div className="relative">
           <div className="flex flex-wrap justify-center items-stretch -mx-4">
             {visibleProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} openModal={openModal} />
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
           <button
@@ -93,15 +81,6 @@ const Projects = () => {
           </button>
         </div>
       </div>
-      {selectedProject && (
-        <Suspense fallback={<div>Loading...</div>}>
-          <ProjectModal
-            projects={projects}
-            selectedProject={selectedProject}
-            onClose={closeModal}
-          />
-        </Suspense>
-      )}
     </div>
   );
 };
