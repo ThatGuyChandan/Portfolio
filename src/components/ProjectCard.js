@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center gap-1 text-xs px-2 py-1 rounded ${
-                  theme === 'dark' ? 'bg-white/10 text-white/80' : 'bg-gray-100 text-gray-700'
+                  theme === 'dark' ? 'bg-blue-900/20 text-blue-500 hover:bg-blue-900/40' : 'bg-blue-100 text-blue-500 hover:bg-blue-200'
                 }`}
               >
                 <Github size={14} />
@@ -46,7 +46,7 @@ const ProjectCard = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center gap-1 text-xs px-2 py-1 rounded ${
-                  theme === 'dark' ? 'bg-white/10 text-white/80' : 'bg-gray-100 text-gray-700'
+                  theme === 'dark' ? 'bg-blue-900/20 text-blue-500 hover:bg-blue-900/40' : 'bg-blue-100 text-blue-500 hover:bg-blue-200'
                 }`}
               >
                 <ArrowUpRight size={14} />

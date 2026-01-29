@@ -1,5 +1,5 @@
-import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaSlack, FaBootstrap, FaRobot } from 'react-icons/fa';
-import { SiJavascript, SiCplusplus, SiTailwindcss, SiRedux, SiExpress, SiMongodb, SiPostgresql, SiNetlify, SiVercel, SiPostman, SiRender } from 'react-icons/si';
+import { FaJava, FaPython, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaSlack, FaBootstrap, FaRobot, FaWordpress, FaFigma, FaAngular, FaLinux } from 'react-icons/fa';
+import { SiJavascript, SiCplusplus, SiTailwindcss, SiRedux, SiExpress, SiMongodb, SiPostgresql, SiNetlify, SiVercel, SiPostman, SiRender, SiTypescript, SiRedis, SiTerraform, SiFirebase, SiAppwrite, SiNestjs, SiFlask } from 'react-icons/si';
 
 const skillData = [
   // Languages
@@ -38,6 +38,17 @@ const skillData = [
   { id: 23, skill: "Postman", category: "Tools", level: "Advanced", icon: <SiPostman /> },
   { id: 24, skill: "Cursor", category: "Tools", alt: "editor", level: "Advanced", icon: null }, // No specific icon for Cursor
   { id: 25, skill: "ChatGPT", category: "Tools", alt: "ai", level: "Advanced", icon: <FaRobot /> },
+  { id: 26, skill: "WordPress", category: "Tools", level: "Intermediate", icon: <FaWordpress /> },
+  { id: 27, skill: "Figma", category: "Tools", level: "Intermediate", icon: <FaFigma /> },
+  { id: 28, skill: "Angular", category: "Frontend", level: "Intermediate", icon: <FaAngular /> },
+  { id: 29, skill: "TypeScript", category: "Languages", level: "Advanced", icon: <SiTypescript /> },
+  { id: 30, skill: "Redis", category: "Database", level: "Intermediate", icon: <SiRedis /> },
+  { id: 31, skill: "Terraform", category: "Cloud/DevOps", level: "Intermediate", icon: <SiTerraform /> },
+  { id: 32, skill: "Linux", category: "Tools", level: "Advanced", icon: <FaLinux /> },
+  { id: 33, skill: "Firebase", category: "Cloud/DevOps", level: "Intermediate", icon: <SiFirebase /> },
+  { id: 34, skill: "Appwrite", category: "Cloud/DevOps", level: "Intermediate", icon: <SiAppwrite /> },
+  { id: 35, skill: "NestJS", category: "Backend", level: "Intermediate", icon: <SiNestjs /> },
+  { id: 36, skill: "Flask", category: "Backend", level: "Intermediate", icon: <SiFlask /> },
 ];
 
 export default skillData;

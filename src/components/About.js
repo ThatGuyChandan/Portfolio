@@ -27,17 +27,21 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column - Text */}
           <div className="lg:col-span-7 space-y-4 text-xl">
-            <p className={`${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>
-              I'm a passionate software developer dedicated to building beautiful,
-              functional, and user-centric digital experiences. I thrive on
-              solving complex problems and turning ideas into reality. My journey
-              in tech is driven by a relentless curiosity and a desire to learn
-              and grow.
+            <p
+              className={`${theme === "dark" ? "text-white/80" : "text-gray-700"}`}
+            >
+              I'm a passionate software developer dedicated to building
+              beautiful, functional, and user-centric digital experiences. I
+              thrive on solving complex problems and turning ideas into reality.
+              My journey in tech is driven by a relentless curiosity and a
+              desire to learn and grow.
             </p>
-            <p className={`${theme === 'dark' ? 'text-white/70' : 'text-gray-600'}`}>
+            <p
+              className={`${theme === "dark" ? "text-white/70" : "text-gray-600"}`}
+            >
               When I'm not coding, I enjoy exploring new technologies,
-              contributing to open-source projects, and sharing my knowledge with
-              the community through my blog.
+              contributing to open-source projects, and sharing my knowledge
+              with the community through my blog.
             </p>
           </div>
 
@@ -51,7 +55,9 @@ const About = () => {
               }`}
             >
               <h3 className="font-semibold text-2xl mb-4">Highlights</h3>
-              <ul className={`space-y-3 ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'} text-lg`}>
+              <ul
+                className={`space-y-3 ${theme === "dark" ? "text-white/80" : "text-gray-700"} text-lg`}
+              >
                 <li className="flex items-center gap-2">
                   <span className="text-blue-500">•</span>
                   <span>Building scalable web applications</span>
@@ -67,7 +73,7 @@ const About = () => {
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-6">
                 <a
-                  href="https://drive.google.com/file/d/1haqJUe181JJTxl5qwORL1citM6-pOi0F/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1_AJNNN7y-HRSwtNNvmXildFMCjsufxD2/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-300 hover:scale-105 gap-2"
