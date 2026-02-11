@@ -29,7 +29,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="min-h-screen flex flex-col justify-center bg-gray-900" id="contact">
+    <footer className="flex flex-col justify-center bg-gray-900" id="contact">
       <div className="flex-grow flex flex-col justify-center p-12 sm:p-24 md:flex-row gap-12">
         <div className="flex flex-col gap-5 md:w-1/2">
           <div className="text-white py-8 text-center md:text-left">
